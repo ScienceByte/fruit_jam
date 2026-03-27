@@ -1,0 +1,1534 @@
+[gd_scene format=3 uid="uid://dim32rm0ac8p6"]
+
+[ext_resource type="PackedScene" uid="uid://dh763ib6em4wh" path="res://assets/kitchen/PizzaCafe.fbx" id="1_ecgew"]
+[ext_resource type="Material" uid="uid://6o2lyy7fpt0b" path="res://assets/kitchen/kitchen_material.tres" id="2_g1kko"]
+
+[node name="PizzaCafe" unique_id=726131602 instance=ExtResource("1_ecgew")]
+
+[node name="Light_001" parent="." index="3" unique_id=1353338595]
+visible = false
+
+[node name="KitchenTable_005" parent="." index="4" unique_id=1774383997]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Box_002" parent="." index="5" unique_id=1371168391]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CabinerCorner_004" parent="." index="6" unique_id=31594925]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="HighCabinetCorner_001" parent="." index="7" unique_id=901788689]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cabinet3_001" parent="." index="8" unique_id=1093644688]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="HighCabinet2_005" parent="." index="9" unique_id=2043865155]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="HighCabinet1_001" parent="." index="10" unique_id=1642161101]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cabinet2_005" parent="." index="11" unique_id=321328033]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sink_003" parent="." index="12" unique_id=2097952901]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cabinet1_005" parent="." index="13" unique_id=85633674]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CleanPlates_001" parent="." index="14" unique_id=862284845]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="KitchenTable_006" parent="." index="15" unique_id=1059047389]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Oven_004" parent="." index="16" unique_id=952510908]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Oven_005" parent="Oven_004" index="0" unique_id=1009294051]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Oven_006" parent="Oven_004" index="1" unique_id=469236758]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cabinet2_006" parent="." index="17" unique_id=1279469335]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="HighCabinet2_006" parent="." index="18" unique_id=988649055]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChoppingBoard_001" parent="." index="19" unique_id=1877052775]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Knife_001" parent="." index="20" unique_id=131673934]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="KitchenTableSmall_001" parent="." index="21" unique_id=948321704]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Fridge1_001" parent="." index="22" unique_id=1093874023]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Fridge1_002" parent="Fridge1_001" index="0" unique_id=1489054420]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Fridge1_003" parent="Fridge1_001" index="1" unique_id=1008020775]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithSausages_002" parent="." index="23" unique_id=1010930929]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithCheese_002" parent="." index="24" unique_id=388624999]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithDough_002" parent="." index="25" unique_id=1300917375]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Fridge2_003" parent="." index="26" unique_id=1225659449]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Boxes_001" parent="." index="27" unique_id=507600212]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChoppingBoard_006" parent="." index="28" unique_id=574136264]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Knife_005" parent="." index="29" unique_id=982380751]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Dough_003" parent="." index="30" unique_id=1628606035]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="KetchupPizza_002" parent="." index="31" unique_id=1237396968]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="DoughBall_004" parent="." index="32" unique_id=1551881166]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CheeseSliced_002" parent="." index="33" unique_id=1442607857]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaBoxes_003" parent="." index="34" unique_id=644886557]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaBoxOpened_002" parent="." index="35" unique_id=1305318983]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaBoxOpenedPart1_002" parent="PizzaBoxOpened_002" index="0" unique_id=487334140]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChoppingBoard_007" parent="." index="36" unique_id=661454752]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="SausageSliced_002" parent="." index="37" unique_id=857871941]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChoppingBoard_008" parent="." index="38" unique_id=1834452214]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Knife_006" parent="." index="39" unique_id=811130479]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sausage_012" parent="." index="40" unique_id=459672586]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaBoxClosed_003" parent="." index="41" unique_id=2037212354]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaBoxes_004" parent="." index="42" unique_id=702090295]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Mushroom_003" parent="." index="43" unique_id=1233294006]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="MushroomSliced_002" parent="." index="44" unique_id=929878388]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="MushroomSlice_002" parent="." index="45" unique_id=1871738605]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="MushroomSliceMini_002" parent="." index="46" unique_id=158883308]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Mushroom_004" parent="." index="47" unique_id=320952375]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Dough_004" parent="." index="48" unique_id=187329384]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="DoughBall_005" parent="." index="49" unique_id=78598642]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="DoughBall_006" parent="." index="50" unique_id=1381667892]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Souce1_004" parent="." index="51" unique_id=1330840378]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Souce2_005" parent="." index="52" unique_id=681337117]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="WallFood_004" parent="." index="53" unique_id=1316886036]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Souce2_006" parent="." index="54" unique_id=150680219]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Computer_003" parent="." index="55" unique_id=451086120]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="KitchenTable_007" parent="." index="56" unique_id=397717155]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaBoxClosed_004" parent="." index="57" unique_id=1080003615]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="KitchenTable_008" parent="." index="58" unique_id=1157914660]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="KitchenTableSmall_004" parent="." index="59" unique_id=1807933946]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithMushrooms_002" parent="." index="60" unique_id=413050354]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CabinerCorner_005" parent="." index="61" unique_id=901564036]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="HighCabinetCorner_004" parent="." index="62" unique_id=1061039921]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cabinet2_007" parent="." index="63" unique_id=942725041]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="HighCabinet2_007" parent="." index="64" unique_id=1562579779]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PaperTowel2_002" parent="." index="65" unique_id=789258072]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CabinerCorner_006" parent="." index="66" unique_id=1044901504]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cabinet1_006" parent="." index="67" unique_id=384343581]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Souce1_005" parent="." index="68" unique_id=1479372481]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Souce2_007" parent="." index="69" unique_id=822297156]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Souce1_006" parent="." index="70" unique_id=844761710]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Souce2_008" parent="." index="71" unique_id=167642845]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cheese_009" parent="." index="72" unique_id=1151938685]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sausage_013" parent="." index="73" unique_id=1587649062]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sausage_014" parent="." index="74" unique_id=673861570]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sausage_015" parent="." index="75" unique_id=553007666]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sausage_016" parent="." index="76" unique_id=1090976566]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cheese_010" parent="." index="77" unique_id=391400053]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cheese_011" parent="." index="78" unique_id=801896695]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cheese_012" parent="." index="79" unique_id=636809123]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cheese_013" parent="." index="80" unique_id=465636510]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sausage_017" parent="." index="81" unique_id=1714192083]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sausage_018" parent="." index="82" unique_id=895398924]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sausage_019" parent="." index="83" unique_id=911229770]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sausage_020" parent="." index="84" unique_id=273464455]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sausage_021" parent="." index="85" unique_id=917764104]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sausage_022" parent="." index="86" unique_id=1289514372]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cheese_014" parent="." index="87" unique_id=410095443]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cheese_015" parent="." index="88" unique_id=231968706]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cheese_016" parent="." index="89" unique_id=1204486119]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="DoorBig001_001" parent="." index="90" unique_id=1433789627]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="DoorBigPart2_003" parent="DoorBig001_001" index="0" unique_id=1265234749]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="DoorBigPart1_003" parent="DoorBig001_001" index="1" unique_id=1562769970]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Fridge2_004" parent="." index="91" unique_id=328511900]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sink_004" parent="." index="92" unique_id=1778561561]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Door_005" parent="." index="93" unique_id=432182539]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="DoorPart1_004" parent="Door_005" index="0" unique_id=941322252]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cabinet1_007" parent="." index="94" unique_id=1519460930]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Computer_004" parent="." index="95" unique_id=1093563325]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChairTall_011" parent="." index="96" unique_id=1827740039]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChairTall_012" parent="." index="97" unique_id=1878821873]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChairTall_013" parent="." index="98" unique_id=1718797946]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChairTall_014" parent="." index="99" unique_id=1634742095]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChairTall_015" parent="." index="100" unique_id=747207200]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChairTall_016" parent="." index="101" unique_id=1930369572]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChairTall_017" parent="." index="102" unique_id=1643427174]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChairTall_018" parent="." index="103" unique_id=507041470]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChairTall_019" parent="." index="104" unique_id=67671558]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="TableWindow_010" parent="." index="105" unique_id=1776162860]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="TableWindow_011" parent="." index="106" unique_id=1268022075]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="TableWindow_012" parent="." index="107" unique_id=85919113]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="TableWindow_013" parent="." index="108" unique_id=830527171]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="TableWindow_014" parent="." index="109" unique_id=857589610]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="TableWindow_015" parent="." index="110" unique_id=827181854]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="TableWindow_016" parent="." index="111" unique_id=1386154519]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="TableWindow_017" parent="." index="112" unique_id=1935699816]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="TableWindow_018" parent="." index="113" unique_id=1514322234]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChairTall_020" parent="." index="114" unique_id=2007960135]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cube_005" parent="." index="115" unique_id=124436164]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cube_006" parent="." index="116" unique_id=2039526579]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cabinet1_008" parent="." index="117" unique_id=694093780]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_009" parent="." index="118" unique_id=1089052632]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_010" parent="." index="119" unique_id=1884055787]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_011" parent="." index="120" unique_id=280566418]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_012" parent="." index="121" unique_id=1961164113]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_013" parent="." index="122" unique_id=214749890]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_014" parent="." index="123" unique_id=2013445140]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_015" parent="." index="124" unique_id=1973963093]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_016" parent="." index="125" unique_id=2053394029]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_017" parent="." index="126" unique_id=115970661]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_018" parent="." index="127" unique_id=292398434]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_019" parent="." index="128" unique_id=948949272]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_020" parent="." index="129" unique_id=73825963]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_021" parent="." index="130" unique_id=429834603]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_022" parent="." index="131" unique_id=927953285]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_023" parent="." index="132" unique_id=1025581217]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_024" parent="." index="133" unique_id=2003073023]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_025" parent="." index="134" unique_id=990932602]
+transform = Transform3D(1.7881393e-07, -0.99999994, -3.8941437e-07, -0.99999994, -1.1920929e-07, -5.684342e-14, -1.4210855e-14, 3.8941437e-07, -1, 4.998894, 1.0025117, -1.9998515)
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_026" parent="." index="135" unique_id=498469789]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_027" parent="." index="136" unique_id=1597705721]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_028" parent="." index="137" unique_id=1415975793]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_029" parent="." index="138" unique_id=1789975526]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_030" parent="." index="139" unique_id=36568044]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_031" parent="." index="140" unique_id=54203769]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_032" parent="." index="141" unique_id=565990]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="WallFood_005" parent="." index="142" unique_id=1619552138]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Door_004" parent="." index="143" unique_id=136336682]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="DoorPart1_006" parent="Door_004" index="0" unique_id=752490460]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Hanger_001" parent="." index="144" unique_id=678539974]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_037" parent="." index="145" unique_id=692432510]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_038" parent="." index="146" unique_id=1461584469]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_039" parent="." index="147" unique_id=1131177254]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_040" parent="." index="148" unique_id=195879444]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_041" parent="." index="149" unique_id=1091245112]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_042" parent="." index="150" unique_id=120495386]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_043" parent="." index="151" unique_id=2139860467]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_044" parent="." index="152" unique_id=1743530862]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_045" parent="." index="153" unique_id=1181648959]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_046" parent="." index="154" unique_id=270912344]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_047" parent="." index="155" unique_id=832175629]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_048" parent="." index="156" unique_id=636331248]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_049" parent="." index="157" unique_id=1218590787]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_050" parent="." index="158" unique_id=476163094]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_051" parent="." index="159" unique_id=203236141]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_052" parent="." index="160" unique_id=1457590182]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_053" parent="." index="161" unique_id=594020900]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_054" parent="." index="162" unique_id=1802126151]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_055" parent="." index="163" unique_id=1092550911]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_056" parent="." index="164" unique_id=1264489476]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_057" parent="." index="165" unique_id=1859324946]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_058" parent="." index="166" unique_id=1796922504]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_059" parent="." index="167" unique_id=205581755]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_060" parent="." index="168" unique_id=887842666]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_061" parent="." index="169" unique_id=1828208910]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_062" parent="." index="170" unique_id=385908645]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_063" parent="." index="171" unique_id=1879084263]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_064" parent="." index="172" unique_id=347429696]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_065" parent="." index="173" unique_id=1314382305]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_066" parent="." index="174" unique_id=1193289295]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_067" parent="." index="175" unique_id=1667792281]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_068" parent="." index="176" unique_id=1630027530]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_069" parent="." index="177" unique_id=1163532305]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_070" parent="." index="178" unique_id=1281233534]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_071" parent="." index="179" unique_id=1884935923]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig_072" parent="." index="180" unique_id=1731125591]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PaperTowel1_001" parent="." index="181" unique_id=1714675444]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="DirtyPlates_001" parent="." index="182" unique_id=1624138872]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_002" parent="." index="183" unique_id=267598946]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_004" parent="." index="184" unique_id=1138544194]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_007" parent="." index="185" unique_id=2040588858]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_008" parent="." index="186" unique_id=1184523348]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_037" parent="." index="187" unique_id=1455862825]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_038" parent="." index="188" unique_id=150570031]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_039" parent="." index="189" unique_id=287396649]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_040" parent="." index="190" unique_id=818931337]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_041" parent="." index="191" unique_id=1888325102]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_042" parent="." index="192" unique_id=1619727735]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_043" parent="." index="193" unique_id=874481208]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_044" parent="." index="194" unique_id=2085506561]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_045" parent="." index="195" unique_id=1180516044]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_046" parent="." index="196" unique_id=629873701]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_047" parent="." index="197" unique_id=1164829106]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_048" parent="." index="198" unique_id=1001477171]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_049" parent="." index="199" unique_id=931152333]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_050" parent="." index="200" unique_id=1617439405]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_051" parent="." index="201" unique_id=712062519]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_052" parent="." index="202" unique_id=1072736676]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_053" parent="." index="203" unique_id=964908742]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_054" parent="." index="204" unique_id=78857302]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane_055" parent="." index="205" unique_id=1331523805]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="RollingPin_001" parent="." index="206" unique_id=1774370312]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="RollingPin_002" parent="." index="207" unique_id=303433721]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cylinder" parent="." index="208" unique_id=810321223]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cabinet3_002" parent="." index="209" unique_id=1716791986]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="HighCabinet1_002" parent="." index="210" unique_id=1406509034]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CabinerCorner_001" parent="." index="211" unique_id=1970121148]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PaperTowel1_002" parent="." index="212" unique_id=1849171790]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Souce1_001" parent="." index="213" unique_id=839751025]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PaperTowel1_003" parent="." index="214" unique_id=2066498755]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PaperTowel1_004" parent="." index="215" unique_id=2092577941]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Knife_002" parent="." index="216" unique_id=189446841]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Knife_003" parent="." index="217" unique_id=220954211]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Knife_004" parent="." index="218" unique_id=2048739481]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChoppingBoard_002" parent="." index="219" unique_id=1297188814]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChoppingBoard_003" parent="." index="220" unique_id=2111601132]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Hanger_002" parent="." index="221" unique_id=1916746696]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PlantBig_001" parent="." index="222" unique_id=1872067637]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PlantSmall_001" parent="." index="223" unique_id=500981525]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaMushrooms_001" parent="." index="224" unique_id=1844965867]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaPepperoni_001" parent="." index="225" unique_id=963466637]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaMushrooms_002" parent="." index="226" unique_id=375056684]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaPepperoniOnPlate_001" parent="." index="227" unique_id=2136779684]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaMushroomsOnPlate_001" parent="." index="228" unique_id=1786206908]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaPepperoni_002" parent="." index="229" unique_id=151580243]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaPepperoniOnPlate_002" parent="." index="230" unique_id=572644487]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plate_001" parent="." index="231" unique_id=2085223622]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaPepperoniSliceOnPlate_001" parent="." index="232" unique_id=1469133081]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaMushroomsSliceOnPlate_001" parent="." index="233" unique_id=1454018139]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaMushroomsSliceOnPlate_002" parent="." index="234" unique_id=1295534632]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaPepperoniSliceOnPlate_002" parent="." index="235" unique_id=1839721378]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaMushroomsSliceOnPlate_003" parent="." index="236" unique_id=860651219]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plate_002" parent="." index="237" unique_id=758700030]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaMushroomsOnPlate_002" parent="." index="238" unique_id=1848410299]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_001" parent="." index="239" unique_id=1401460606]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_001" parent="NapkinHolder_001" index="0" unique_id=1187671419]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_002" parent="." index="240" unique_id=1460818123]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_002" parent="NapkinHolder_002" index="0" unique_id=643350786]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_003" parent="." index="241" unique_id=361756886]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_003" parent="NapkinHolder_003" index="0" unique_id=1324676950]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_004" parent="." index="242" unique_id=1876776480]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_004" parent="NapkinHolder_004" index="0" unique_id=232575592]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_005" parent="." index="243" unique_id=273528810]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_006" parent="." index="244" unique_id=568587680]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_005" parent="NapkinHolder_006" index="0" unique_id=873543335]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_007" parent="." index="245" unique_id=1432981354]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_006" parent="NapkinHolder_007" index="0" unique_id=607542173]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_008" parent="." index="246" unique_id=249119509]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_009" parent="." index="247" unique_id=439084059]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_007" parent="NapkinHolder_009" index="0" unique_id=750012259]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_010" parent="." index="248" unique_id=1729019239]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_008" parent="NapkinHolder_010" index="0" unique_id=2056809776]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_011" parent="." index="249" unique_id=1937350140]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_009" parent="NapkinHolder_011" index="0" unique_id=1821612479]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_012" parent="." index="250" unique_id=1466258775]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_010" parent="NapkinHolder_012" index="0" unique_id=1338552027]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_013" parent="." index="251" unique_id=1852376930]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_011" parent="NapkinHolder_013" index="0" unique_id=418235557]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_014" parent="." index="252" unique_id=977349375]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_012" parent="NapkinHolder_014" index="0" unique_id=1436629693]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_015" parent="." index="253" unique_id=1932942008]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_013" parent="NapkinHolder_015" index="0" unique_id=1167459840]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_016" parent="." index="254" unique_id=1346252707]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_014" parent="NapkinHolder_016" index="0" unique_id=1495755509]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_017" parent="." index="255" unique_id=1640796087]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_015" parent="NapkinHolder_017" index="0" unique_id=1956474774]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_018" parent="." index="256" unique_id=1997098163]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_016" parent="NapkinHolder_018" index="0" unique_id=1055519647]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_019" parent="." index="257" unique_id=874593929]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_017" parent="NapkinHolder_019" index="0" unique_id=354988248]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_020" parent="." index="258" unique_id=1261088883]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_018" parent="NapkinHolder_020" index="0" unique_id=1947502544]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_021" parent="." index="259" unique_id=2021044283]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_019" parent="NapkinHolder_021" index="0" unique_id=942350410]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder_022" parent="." index="260" unique_id=1531220215]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins_020" parent="NapkinHolder_022" index="0" unique_id=2051345606]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="WallSmall_001" parent="." index="261" unique_id=537994882]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="WallSmall_002" parent="." index="262" unique_id=191575624]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Window_001" parent="." index="263" unique_id=645565604]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="WindowGlass_001" parent="." index="264" unique_id=977723788]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Window_002" parent="." index="265" unique_id=2033828570]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="WindowGlass_002" parent="." index="266" unique_id=679336037]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowSide_001" parent="." index="267" unique_id=807749113]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowSideGlass_001" parent="." index="268" unique_id=146552720]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowMiddle__001" parent="." index="269" unique_id=2066474376]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowMiddleGlass_001" parent="." index="270" unique_id=820253786]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowSide_002" parent="." index="271" unique_id=180588751]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowSideGlass_002" parent="." index="272" unique_id=1121486544]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowSide_003" parent="." index="273" unique_id=1339529079]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowSideGlass_003" parent="." index="274" unique_id=1815466784]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowMiddle__002" parent="." index="275" unique_id=187548042]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowMiddleGlass_002" parent="." index="276" unique_id=54321826]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowSide_004" parent="." index="277" unique_id=131932429]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowSideGlass_004" parent="." index="278" unique_id=1251086008]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Window_003" parent="." index="279" unique_id=313815925]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="WindowGlass_003" parent="." index="280" unique_id=1621510049]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Window_004" parent="." index="281" unique_id=1447917141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0972333, 0.0023732781, -8.197811)
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="WindowGlass_004" parent="." index="282" unique_id=2028351229]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Window_005" parent="." index="283" unique_id=545752743]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="WindowGlass_005" parent="." index="284" unique_id=2134344602]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Window_006" parent="." index="285" unique_id=218300294]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="WindowGlass_006" parent="." index="286" unique_id=262128391]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorTiles" parent="." index="287" unique_id=951943566]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cabinet2" parent="." index="288" unique_id=1829971258]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CabinerCorner" parent="." index="289" unique_id=670090730]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cabinet3" parent="." index="290" unique_id=1607011427]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cabinet1" parent="." index="291" unique_id=1054291834]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sink" parent="." index="292" unique_id=138181808]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Computer" parent="." index="293" unique_id=1123886075]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="KitchenTable" parent="." index="294" unique_id=70777564]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="KitchenTableSmall" parent="." index="295" unique_id=50839908]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Box" parent="." index="296" unique_id=763850260]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChoppingBoard" parent="." index="297" unique_id=2037797401]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Knife" parent="." index="298" unique_id=1386629954]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="HighCabinet2" parent="." index="299" unique_id=534982144]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="HighCabinet1" parent="." index="300" unique_id=1803638758]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="HighCabinetCorner" parent="." index="301" unique_id=610837488]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Dough" parent="." index="302" unique_id=858288368]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Pizza" parent="." index="303" unique_id=1655975978]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cheese" parent="." index="304" unique_id=492307569]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sauce1" parent="." index="305" unique_id=589964271]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sauce2" parent="." index="306" unique_id=21873595]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plate" parent="." index="307" unique_id=619090325]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PlateDirty1" parent="." index="308" unique_id=370432972]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PlateDirty2" parent="." index="309" unique_id=1127746624]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaBoxOpened" parent="." index="310" unique_id=1333035005]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaBoxOpened_Part1" parent="PizzaBoxOpened" index="0" unique_id=259841265]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaBoxClosed" parent="." index="311" unique_id=650838854]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CleanPlates" parent="." index="312" unique_id=1023333883]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PaperTowel1" parent="." index="313" unique_id=536603273]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sausage" parent="." index="314" unique_id=1843499568]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithSausages" parent="." index="315" unique_id=1133139482]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="SausageSliced" parent="." index="316" unique_id=940629142]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="SausageSliceBig" parent="." index="317" unique_id=2104510602]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="SausageSliceSmall" parent="." index="318" unique_id=1982629131]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithCheese" parent="." index="319" unique_id=1915188453]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="DoughBall" parent="." index="320" unique_id=136636165]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithDough" parent="." index="321" unique_id=524291200]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="RollingPin" parent="." index="322" unique_id=820197678]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Mushroom" parent="." index="323" unique_id=508639635]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithMushrooms" parent="." index="324" unique_id=168494101]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CheeseSliced" parent="." index="325" unique_id=906648729]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="MushroomSliced" parent="." index="326" unique_id=601256753]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="MushroomSlice" parent="." index="327" unique_id=1551047256]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaMushrooms" parent="." index="328" unique_id=767291458]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="KetchupPizza" parent="." index="329" unique_id=89524046]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaPepperoniSlice" parent="." index="330" unique_id=1850358885]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="MushroomSliceMini" parent="." index="331" unique_id=666198552]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaPepperoniOnPlate" parent="." index="332" unique_id=1139004640]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaMushroomsOnPlate" parent="." index="333" unique_id=1326914628]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaBoxes" parent="." index="334" unique_id=1653561640]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaPepperoni" parent="." index="335" unique_id=604689190]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaMushroomsSlice" parent="." index="336" unique_id=2081325935]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PaperTowel2" parent="." index="337" unique_id=1363576717]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaPepperoniSliceOnPlate" parent="." index="338" unique_id=1375074284]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PizzaMushroomsSliceOnPlate" parent="." index="339" unique_id=2000733404]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="TableWindow" parent="." index="340" unique_id=182099903]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChairTall" parent="." index="341" unique_id=1566928989]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="DirtyPlates" parent="." index="342" unique_id=356625733]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Oven" parent="." index="343" unique_id=372747531]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="OvenPart2" parent="Oven" index="0" unique_id=1672190566]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="OvenPart1" parent="Oven" index="1" unique_id=618927087]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Fridge1" parent="." index="344" unique_id=1000323276]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Fridge1Part1" parent="Fridge1" index="0" unique_id=22254706]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Fridge1Part2" parent="Fridge1" index="1" unique_id=215869830]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Fridge2" parent="." index="345" unique_id=387776864]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Fridge2Part1" parent="Fridge2" index="0" unique_id=280029854]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Wall" parent="." index="346" unique_id=1987418212]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Tiles" parent="." index="347" unique_id=1543580665]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Window" parent="." index="348" unique_id=1498220165]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="WallFood" parent="." index="349" unique_id=335717372]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Door" parent="." index="350" unique_id=20795842]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="DoorPart1_005" parent="Door" index="0" unique_id=301560292]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="WallSmall" parent="." index="351" unique_id=1643848328]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowSide" parent="." index="352" unique_id=1067286030]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowMiddle_" parent="." index="353" unique_id=1617911403]
+transform = Transform3D(0.99998033, 0.005851701, 0.0022550293, -0.00586378, 0.9999683, 0.0053889393, -0.0022234295, -0.005402054, 0.99998295, -15.903051, 5.9604645e-08, -1.197191)
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="DoorBig" parent="." index="354" unique_id=1746655348]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="DoorBigPart2_004" parent="DoorBig" index="0" unique_id=531231004]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="DoorBigPart1_004" parent="DoorBig" index="1" unique_id=2088650702]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="FloorBig" parent="." index="355" unique_id=122453516]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Table" parent="." index="356" unique_id=831135315]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Chair" parent="." index="357" unique_id=1335365502]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PlantBig" parent="." index="358" unique_id=2050954177]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PlantSmall" parent="." index="359" unique_id=1685279095]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CounterTable2" parent="." index="360" unique_id=755207894]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CounterTable1" parent="." index="361" unique_id=128717382]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="NapkinHolder" parent="." index="363" unique_id=392462953]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Napkins" parent="NapkinHolder" index="0" unique_id=2070893114]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="WindowGlass" parent="." index="364" unique_id=440156736]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowSideGlass" parent="." index="365" unique_id=722824860]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PanoramicWindowMiddleGlass" parent="." index="366" unique_id=261656991]
+transform = Transform3D(0.99998033, 0.005851701, 0.0022550293, -0.00586378, 0.9999683, 0.0053889393, -0.0022234295, -0.005402054, 0.99998295, -15.903051, 5.9604645e-08, -1.197191)
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Hanger" parent="." index="367" unique_id=644001204]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Boxes" parent="." index="368" unique_id=1253576665]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PlatesHolder" parent="." index="369" unique_id=2087786429]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CookingPot_022" parent="." index="422" unique_id=1332604688]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CookingPot_023" parent="." index="423" unique_id=1485719301]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Pan_012" parent="." index="424" unique_id=195451329]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CookingPot_024" parent="." index="425" unique_id=413348214]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CookingPot_025" parent="." index="426" unique_id=1837255366]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Pan_013" parent="." index="427" unique_id=2010913222]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Pan_014" parent="." index="428" unique_id=866122624]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CookingPot_026" parent="." index="429" unique_id=1534184341]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Boxes_002" parent="." index="430" unique_id=861743609]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CabinerCorner_002" parent="." index="532" unique_id=1736761125]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="HighCabinetCorner_002" parent="." index="541" unique_id=2030791002]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Fridge1_004" parent="." index="544" unique_id=428699584]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Fridge1Part2_001" parent="Fridge1_004" index="1" unique_id=1517123652]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Wall_018" parent="." index="548" unique_id=542768945]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Wall_020" parent="." index="555" unique_id=1471663083]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Wall_021" parent="." index="556" unique_id=1352503757]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cabinet3_005" parent="." index="565" unique_id=571546074]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CupboardSmall_001" parent="." index="567" unique_id=1161244660]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PaperTowel1_006" parent="." index="579" unique_id=1391817671]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Soup_001" parent="." index="636" unique_id=1153479598]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Soup_002" parent="." index="637" unique_id=1285210206]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Soup_003" parent="." index="638" unique_id=477821330]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Soup_004" parent="." index="639" unique_id=670693103]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithRice_001" parent="." index="645" unique_id=840638561]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithRice_002" parent="." index="646" unique_id=1461517462]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithEggs_001" parent="." index="647" unique_id=1515514726]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithEggs_002" parent="." index="649" unique_id=513412348]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithEggs_003" parent="." index="650" unique_id=667308568]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithEggs_004" parent="." index="651" unique_id=1431672149]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithEggs_005" parent="." index="652" unique_id=1389309930]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithEggs_006" parent="." index="653" unique_id=417033018]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithSomeEggs_002" parent="." index="654" unique_id=1493167692]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_001" parent="." index="655" unique_id=1924179381]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_002" parent="." index="656" unique_id=89491708]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_003" parent="." index="657" unique_id=286891810]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_004" parent="." index="658" unique_id=1316198066]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_005" parent="." index="659" unique_id=864811495]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_006" parent="." index="660" unique_id=922275496]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_007" parent="." index="661" unique_id=592939555]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_008" parent="." index="662" unique_id=700591291]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_009" parent="." index="663" unique_id=474816264]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_010" parent="." index="664" unique_id=566305288]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_011" parent="." index="665" unique_id=297025751]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_012" parent="." index="666" unique_id=158549542]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_013" parent="." index="667" unique_id=100196136]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_014" parent="." index="668" unique_id=1768496026]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_015" parent="." index="669" unique_id=2054774938]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_016" parent="." index="670" unique_id=991418967]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_017" parent="." index="671" unique_id=1794921162]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs_018" parent="." index="672" unique_id=2019810941]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Soup2_002" parent="." index="674" unique_id=1740892777]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Soup2_003" parent="." index="675" unique_id=1620103688]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="SushiCounterTable" parent="." index="873" unique_id=962728108]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="TableLong" parent="." index="874" unique_id=976747812]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sofa" parent="." index="875" unique_id=362984147]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Floor" parent="." index="876" unique_id=283553033]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cooker" parent="." index="877" unique_id=1305314115]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cupboard" parent="." index="878" unique_id=501802089]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CupboardSmall" parent="." index="879" unique_id=288208339]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="SushiCounterTableCorner" parent="." index="880" unique_id=2033120466]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PileOfSushiPlates" parent="." index="881" unique_id=581141118]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PileOfSushiPlatesSmall" parent="." index="882" unique_id=860165681]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Tray" parent="." index="883" unique_id=1840136535]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PileOfTrays" parent="." index="884" unique_id=1198190018]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="SushiPlate_003" parent="." index="885" unique_id=1350821812]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Bowl" parent="." index="886" unique_id=855909741]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="PileOfBowls" parent="." index="887" unique_id=687378654]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="SushiPlate" parent="." index="888" unique_id=1951846398]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Plane" parent="." index="889" unique_id=66546786]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cube_032" parent="." index="890" unique_id=1289057917]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Cube_033" parent="." index="891" unique_id=66763933]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BigHanger" parent="." index="892" unique_id=750678230]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CoatHanger" parent="." index="893" unique_id=2035991497]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CookingPot" parent="." index="894" unique_id=283454726]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Pan" parent="." index="895" unique_id=810771830]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CookerHood" parent="." index="896" unique_id=1131975124]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CookingPotSmall" parent="." index="897" unique_id=136186619]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sushi2" parent="." index="898" unique_id=1614156440]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Sushi1" parent="." index="899" unique_id=1007509951]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Soup" parent="." index="900" unique_id=192210689]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithRice" parent="." index="901" unique_id=833447709]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithFish" parent="." index="902" unique_id=1633039691]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithEggs" parent="." index="903" unique_id=51596468]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithSomeEggs" parent="." index="904" unique_id=500825825]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithoutEggs" parent="." index="905" unique_id=505744717]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Fish" parent="." index="906" unique_id=2057527759]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithFish_002" parent="." index="907" unique_id=1947216471]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithFish_003" parent="." index="908" unique_id=555988282]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="BoxWithFish_001" parent="." index="909" unique_id=1480726703]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Soup2" parent="." index="910" unique_id=2013949350]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChoppingBoard_009" parent="." index="911" unique_id=871246957]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChopStick" parent="." index="912" unique_id=37128829]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Saucer" parent="." index="913" unique_id=1208504270]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="SauceBottle" parent="." index="914" unique_id=2078629500]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="SushiCooking" parent="." index="915" unique_id=135437010]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="SushiBox" parent="." index="916" unique_id=855382986]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="SushiBoxCover" parent="." index="917" unique_id=384664311]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="ChairBar" parent="." index="918" unique_id=1146107416]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CheckHolderWithChecks" parent="." index="919" unique_id=627394441]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="CheckHolder" parent="." index="920" unique_id=1570065534]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Check" parent="." index="921" unique_id=551514018]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Rice" parent="." index="922" unique_id=1876638580]
+surface_material_override/0 = ExtResource("2_g1kko")
+
+[node name="Egg" parent="." index="923" unique_id=1449242873]
+surface_material_override/0 = ExtResource("2_g1kko")

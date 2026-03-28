@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3jvmuql26r8s"]
 
-[ext_resource type="Script" uid="uid://dblen0fops1qg" path="res://scripts/player.gd" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bu1hashg37cmp" path="res://scenes/player.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://dqh2km438de3t" path="res://scenes/kitchen_boundary.tscn" id="3_sugp2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
@@ -16,8 +16,6 @@ sky = SubResource("Sky_sugp2")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sugp2"]
-
 [node name="Main" type="Node3D" unique_id=2054266872]
 
 [node name="lighting" type="Node3D" parent="." unique_id=832965324]
@@ -30,18 +28,7 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="lighting" unique_id=1077899607]
 environment = SubResource("Environment_jyhfs")
 
-[node name="player" type="CharacterBody3D" parent="." unique_id=1184300108]
+[node name="player" parent="." unique_id=962974825 instance=ExtResource("1_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7248716, 3.8115406, -6.0810375)
-script = ExtResource("2_0wfyh")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=1820321424]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07661438, -2.2237778, 0.050519943)
-shape = SubResource("CapsuleShape3D_sugp2")
-
-[node name="head" type="Node3D" parent="player" unique_id=960560082]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.076497555, -3.309989, 0.050236225)
-
-[node name="Camera3D" type="Camera3D" parent="player/head" unique_id=221901774]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="Kitchen Boundary" parent="." unique_id=1499721593 instance=ExtResource("3_sugp2")]

@@ -17,6 +17,12 @@ sky = SubResource("Sky_sugp2")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_sugp2"]
+vertices = PackedVector3Array(-0.5, 0.5, -0.5000001, -0.5, 0.5, 0.49999988, 0.5, 0.5, 0.49999988, 0.5, 0.5, -0.5000001)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jyhfs"]
+
 [node name="Main" type="Node3D" unique_id=2054266872]
 
 [node name="lighting" type="Node3D" parent="." unique_id=832965324]
@@ -36,3 +42,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.7248716, 3.8115406, -
 
 [node name="enemy" parent="." unique_id=1573033731 instance=ExtResource("3_jyhfs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9819164, 11.034401, -26.517986)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1089340105]
+transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 50, 9.867165, 0.027533054, -19.962854)
+navigation_mesh = SubResource("NavigationMesh_sugp2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=1707584624]
+mesh = SubResource("PlaneMesh_jyhfs")

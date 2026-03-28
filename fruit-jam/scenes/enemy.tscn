@@ -1,25 +1,20 @@
 [gd_scene format=3 uid="uid://cm1dbmf7nhqfd"]
 
-[ext_resource type="Script" uid="uid://b1ota0kcl8uw4" path="res://scripts/enemy.gd" id="1_md0e3"]
 [ext_resource type="Texture2D" uid="uid://d0n68txm1f8nc" path="res://assets/npcs/egg.png" id="2_4ra3w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_md0e3"]
-size = Vector3(1, 2.4736633, 0.5189878)
+size = Vector3(1, 2.4736633, 0.9982634)
 
-[node name="enemy" type="Node3D" unique_id=1573033731]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8443193, 0)
-script = ExtResource("1_md0e3")
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=143697681]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=450970243]
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1448266721]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1955333110]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07752991, 0.24476771)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1547303518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07752991, 0.0051298887)
 shape = SubResource("BoxShape3D_md0e3")
 
-[node name="Sprite3D" type="Sprite3D" parent="RigidBody3D/CollisionShape3D" unique_id=34931994]
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody3D/CollisionShape3D" unique_id=1952311990]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.031829834, 0.014226168)
 billboard = 1
 texture = ExtResource("2_4ra3w")
-
-[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

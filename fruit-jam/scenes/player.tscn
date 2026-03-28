@@ -162,7 +162,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0.3427992, -0.44482875, 0)
 
 [node name="WeaponMesh" type="MeshInstance3D" parent="head/Camera3D/WeaponPivot" unique_id=1979086082]
-transform = Transform3D(0.10000014, 0, 0, 0, 0.91651636, 0.039999705, 0, -0.39999714, 0.09165162, 0.11451745, 0, -0.5358345)
+transform = Transform3D(0.10000014, 0, 0, 0, 0.9165163, 0.039999705, 0, -0.39999712, 0.09165162, 0.11451745, 0, -0.5358345)
 mesh = SubResource("BoxMesh_3vyb7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2059140621]

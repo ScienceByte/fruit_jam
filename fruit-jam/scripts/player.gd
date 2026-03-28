@@ -6,7 +6,7 @@ extends CharacterBody3D
 var curr_speed = 5.0
 
 @export var walking_speed = 5.0
-const sprinting_speed = 25.0
+const sprinting_speed = 10.0
 const crouch_speed = 3.0
 const jump_velocity = 4.5
 
@@ -81,13 +81,16 @@ func start_dash():
 	dash_direction = input_direction.normalized()
 	
 	
-	dash_start_velocity = Vector3(velocity.x, velocity.y, velocity.z)
+	dash_start_velocity = Vector3(velocity.x, .02 * -$head.global_transform.basis.z.y , velocity.z)
 
 func _physics_process(delta: float) -> void:
 	var now : int = Time.get_ticks_msec()
-	print("(",global_transform.basis.z.x, "," ,-$head.global_transform.basis.z.y, "," ,global_transform.basis.z.z, ")")
-	if (now - last_dash_time) >= dash_cooldown:
-		print("Dash ready")
+	#print("(",global_transform.basis.z.x, "," ,-$head.global_transform.basis.z.y, "," ,global_transform.basis.z.z, ")")
+	#if (now - last_dash_time) >= dash_cooldown:
+		#print("Dash ready")
+	#print($"../enemy/RigidBody3D/CollisionShape3D".global_rotation.z)
+
+
 	# input action
 	if Input.is_action_pressed("crouch"):
 		curr_speed = crouch_speed
@@ -117,15 +120,16 @@ func _physics_process(delta: float) -> void:
 	if is_dashing:
 		var added_velocity : Vector3 = Vector3.ZERO
 		added_velocity = added_velocity.lerp(dash_start_velocity, delta * dash_duration)
-		velocity.x = added_velocity.x + dash_direction.x * dash_speed
-		velocity.z = added_velocity.z + dash_direction.z * dash_speed
+		velocity.x = (dash_start_velocity.x - added_velocity.x) + dash_direction.x * dash_speed
+		velocity.z = (dash_start_velocity.z - added_velocity.z) + dash_direction.z * dash_speed
 		added_velocity = added_velocity.lerp(dash_start_velocity / 10, pow(delta * dash_duration,100))
-		velocity.y = added_velocity.y * 10 + dash_direction.y * dash_speed
+		velocity.y = (dash_start_velocity.y - added_velocity.y) * 10 + dash_direction.y * dash_speed
 		move_and_slide()
 		dash_timer -= delta
 		if dash_timer < 0:
 			is_dashing = false
 			dash_timer = 0
+
 
 	else:
 		# normal movement

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c0hv0xklje1np"]
+
+[ext_resource type="ArrayMesh" uid="uid://ceg4os6wno5hx" path="res://assets/Food/OBJ format/carton.obj" id="1_0p51g"]
+[ext_resource type="Script" uid="uid://grgnxjd0mcw4" path="res://scenes/milk_enemy.gd" id="1_6yip4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6yip4"]
+size = Vector3(0.83013916, 1.9495087, 0.82818604)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6yip4"]
+load_path = "res://.godot/imported/ExpressionsAssetByVerzatileDevIndiv__g87.png-451d92606df9fedc300cd394bbfe1d03.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6yip4"]
+transparency = 1
+albedo_color = Color(0.84705883, 0.21960784, 0.2509804, 0.76862746)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oqcls"]
+material = SubResource("StandardMaterial3D_6yip4")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6yip4"]
+points = PackedVector3Array(0.45714286, 0.007142857, 0.45714286, -0.45714286, -0.007142857, -0.45714286, -0.45714286, 0.007142857, -0.45714286, 0.45714286, -0.007142857, -0.45714286, -0.45714286, -0.007142857, 0.45714286, -0.45714286, 0.007142857, 0.45714286, 0.45714286, 0.007142857, -0.45714286, 0.45714286, -0.007142857, 0.45714286)
+
+[sub_resource type="Animation" id="Animation_6yip4"]
+resource_name = "WarningArea"
+length = 3.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oqcls"]
+_data = {
+&"WarningArea": SubResource("Animation_6yip4")
+}
+
+[node name="MilkBody" type="CharacterBody3D" unique_id=1657694849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7422863, 0)
+script = ExtResource("1_6yip4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1157779186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0008850098, 0.9731064, 9.1552734e-05)
+shape = SubResource("BoxShape3D_6yip4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=733955765]
+transform = Transform3D(3.6, 0, 0, 0, 3.5994518, -0.06282866, 0, 0.06282866, 3.5994518, 0, 0, -0.010177493)
+mesh = ExtResource("1_0p51g")
+
+[node name="Face" type="Decal" parent="MeshInstance3D" unique_id=1477963357]
+transform = Transform3D(-4.3711392e-08, -1, 0, 2.30968e-07, 1.831868e-15, -1, 1, -4.3711392e-08, 2.30968e-07, 0.084945686, 0.2792767, -0.0013258674)
+size = Vector3(0.1338234, 0.17633057, 0.08709717)
+texture_albedo = SubResource("CompressedTexture2D_6yip4")
+upper_fade = 1e-05
+lower_fade = 1e-05
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1333933980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.742, 0)
+mesh = SubResource("PlaneMesh_oqcls")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D2" unique_id=1023857398]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D2/Area3D" unique_id=309344779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.022105217, 0)
+shape = SubResource("ConvexPolygonShape3D_6yip4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1478351303]
+libraries/ = SubResource("AnimationLibrary_oqcls")

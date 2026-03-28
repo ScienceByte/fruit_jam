@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 @onready var head: Node3D = $head
-@onready var weapon_hitbox: Area3D = $head/Camera3D/WeaponPivot/MeshInstance3D/WeaponHitbox
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var weapon_hitbox: Area3D = $head/WeaponPivot/MeshInstance3D/Area3D
 
 var curr_speed = 5.0
 

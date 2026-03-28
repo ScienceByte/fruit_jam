@@ -25,6 +25,7 @@ var direction = Vector3.ZERO
 var is_dashing = false
 var dash_timer = 0.0
 var dash_direction = Vector3.ZERO
+var dash_start_velocity = Vector3(velocity.x, 0.0, velocity.z)
 
 var last_dash_time = -1000
 
@@ -72,7 +73,8 @@ func start_dash():
 	dash_direction = -head.global_transform.basis.z
 	dash_direction.y = 0.0
 	dash_direction = dash_direction.normalized()
-
+	
+	dash_start_velocity = Vector3(velocity.x, 0.0, velocity.z)
 
 func _physics_process(delta: float) -> void:
 	var now = Time.get_ticks_msec()
@@ -120,8 +122,8 @@ func _physics_process(delta: float) -> void:
 	# dash movement takes priority
 	if is_dashing:
 		dash_timer -= delta
-		velocity.x = dash_direction.x * dash_speed
-		velocity.z = dash_direction.z * dash_speed
+		velocity.x = dash_start_velocity.x + dash_direction.x * dash_speed
+		velocity.z = dash_start_velocity.z + dash_direction.z * dash_speed
 		move_and_slide()
 
 		if dash_timer <= 0.0:

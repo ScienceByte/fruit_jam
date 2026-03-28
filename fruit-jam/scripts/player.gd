@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
 @onready var head: Node3D = $head
+@onready var weapon_hitbox: Area3D = $head/Camera3D/WeaponPivot/MeshInstance3D/WeaponHitbox
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 var curr_speed = 5.0
 
@@ -28,6 +30,10 @@ var dash_direction = Vector3.ZERO
 var dash_start_velocity = Vector3(velocity.x, 0.0, velocity.z)
 
 var last_dash_time = -1000
+
+var last_attack_time = -1000000
+@export var attack_cooldown_ms= 600
+
 
 # first tap tracking for jump/dash
 var pending_jump = false
@@ -159,3 +165,15 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, curr_speed)
 
 	move_and_slide()
+	
+	
+func _process(delta):
+	var now = Time.get_ticks_msec()
+	if Input.is_action_just_pressed("attack") and now - last_attack_time >= attack_cooldown_ms:
+		anim_player.play("WeaponAttack")
+		weapon_hitbox.monitoring = true
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name  == "Attack":
+		anim_player.play("WeaponIdle")
+		weapon_hitbox.monitoring = false

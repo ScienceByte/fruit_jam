@@ -12,43 +12,46 @@ height = 2.3666992
 
 [sub_resource type="BoxMesh" id="BoxMesh_3vyb7"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g2els"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
 [sub_resource type="Animation" id="Animation_g2els"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WeaponPivot/WeaponMesh:rotation")
+tracks/0/path = NodePath("WeaponPivot:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.41151372, 0, 0)]
+"values": [Vector3(1.4403505, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("WeaponPivot/WeaponMesh:position")
+tracks/1/path = NodePath("WeaponPivot/MeshInstance3D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.11451745, 0, -0.5358345)]
+"values": [Vector3(-1.5707964, 0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("WeaponPivot:rotation")
+tracks/2/path = NodePath("WeaponPivot/MeshInstance3D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(0.0003607571, -0.00024795532, -0.9273069)]
 }
 
 [sub_resource type="Animation" id="Animation_qhqgy"]
@@ -57,80 +60,44 @@ length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WeaponPivot/WeaponMesh:rotation")
+tracks/0/path = NodePath("WeaponPivot:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0009999999),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.3308795, 0, 0)]
+"values": [Vector3(1.4403505, 0, 0), Vector3(-0.56557393, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("WeaponPivot/WeaponMesh:position")
+tracks/1/path = NodePath("WeaponPivot/MeshInstance3D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0009999999),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.11451745, 0.5724764, -0.26348555)]
+"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("WeaponPivot:rotation")
+tracks/2/path = NodePath("WeaponPivot/MeshInstance3D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(0.0003607571, -0.00024795532, -0.9273069), Vector3(0.0003607571, -0.00024795532, -0.9273069)]
 }
 
 [sub_resource type="Animation" id="Animation_dqkch"]
 resource_name = "WeaponIdle"
 length = 3.0
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WeaponPivot/WeaponMesh:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.1724467),
-"transitions": PackedFloat32Array(0.70710725, 0.70710725),
-"update": 0,
-"values": [Vector3(-0.41151372, 0, 0), Vector3(-0.41151384, -1.2024103e-09, 8.826853e-09)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WeaponPivot/WeaponMesh:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.1724467),
-"transitions": PackedFloat32Array(0.70710725, 0.70710725),
-"update": 0,
-"values": [Vector3(0.11451745, 0, -0.5358345), Vector3(0.09573758, -0.12320161, -0.5366182)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WeaponPivot:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.1724467, 1.38),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.006288022, 0.034922864, 0.1512677), Vector3(-0.0074011637, 0.04110511, 0.17804599)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qlg0r"]
 _data = {
@@ -156,12 +123,19 @@ shape = SubResource("CapsuleShape3D_3vyb7")
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=767498973]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
-[node name="WeaponPivot" type="Node3D" parent="head/Camera3D" unique_id=294517001]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0.3427992, -0.44482875, 0)
+[node name="WeaponPivot" type="Node3D" parent="head/Camera3D" unique_id=2115086773]
+transform = Transform3D(1, 0, 0, 0, 0.13007614, -0.9915039, 0, 0.9915039, 0.13007614, 0.424, -0.5970001, -0.34577513)
 
-[node name="WeaponMesh" type="MeshInstance3D" parent="head/Camera3D/WeaponPivot" unique_id=1979086082]
-transform = Transform3D(0.10000004, 0, 0, 0, 0.9165161, 0.03999971, 0, -0.39999706, 0.091651626, 0.11451745, 0, -0.5358345)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="head/Camera3D/WeaponPivot" unique_id=1679858485]
+transform = Transform3D(0.1, 0, 0, 0, -1.0490734e-07, 0.10000001, 0, -2.4000003, -4.371139e-09, 0.0003607571, -0.00024795532, -0.9273069)
 mesh = SubResource("BoxMesh_3vyb7")
+
+[node name="WeaponHitbox" type="Area3D" parent="head/Camera3D/WeaponPivot/MeshInstance3D" unique_id=1705162568]
+transform = Transform3D(1.1, 0, 0, 0, 1.2, 0, 0, 0, 1.1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="head/Camera3D/WeaponPivot/MeshInstance3D/WeaponHitbox" unique_id=2026565557]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, -1.110223e-16, 0, 0, 0.99999994, -4.2436075, -0.00012791157, 0.0024795532)
+shape = SubResource("ConvexPolygonShape3D_g2els")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2059140621]
 root_node = NodePath("../head/Camera3D")

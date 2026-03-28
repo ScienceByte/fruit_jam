@@ -29,7 +29,7 @@ var dash_start_velocity = Vector3(velocity.x, 0.0, velocity.z)
 var last_dash_time : int = -1000
 
 #air resistence
-var air_resistence : Vector3 = Vector3(-9.8,0,-9.8)
+var air_resistence : Vector3 = Vector3(-16,0,-16)
 
 
 func _ready():
@@ -62,8 +62,8 @@ func start_dash():
 	dash_timer = dash_duration
 	var input_direction : Vector3 = Vector3.ZERO
 	
+
 	input_direction.y = -$head.global_transform.basis.z.y / 5
-	
 	if Input.is_key_pressed(KEY_W):
 		input_direction -= global_transform.basis.z
 	if Input.is_key_pressed(KEY_A):
@@ -73,8 +73,11 @@ func start_dash():
 		input_direction.y = $head.global_transform.basis.z.y / 8
 	if Input.is_key_pressed(KEY_D):
 		input_direction += global_transform.basis.x
-	if input_direction == Vector3.ZERO:
-		input_direction = -global_transform.basis.z
+	if input_direction.x == 0 and input_direction.x == 0:
+		input_direction.x = -global_transform.basis.z.x
+		input_direction.z = -global_transform.basis.z.z
+
+
 	dash_direction = input_direction.normalized()
 	
 	
@@ -96,11 +99,11 @@ func _physics_process(delta: float) -> void:
 	# gravity
 	if not is_on_floor():
 		velocity.y += get_gravity().y * delta
-		velocity.x += air_resistence.x * delta
-		velocity.z += air_resistence.z * delta
+		#velocity.x += air_resistence.x * delta
+		#velocity.z += air_resistence.z * delta
 
 	# If player presses space, jump 
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_pressed("ui_accept"):
 		if is_on_floor():
 			velocity.y = jump_velocity
 	
@@ -115,8 +118,9 @@ func _physics_process(delta: float) -> void:
 		var added_velocity : Vector3 = Vector3.ZERO
 		added_velocity = added_velocity.lerp(dash_start_velocity, delta * dash_duration)
 		velocity.x = added_velocity.x + dash_direction.x * dash_speed
-		velocity.y = added_velocity.y * 10 + dash_direction.y * dash_speed
 		velocity.z = added_velocity.z + dash_direction.z * dash_speed
+		added_velocity = added_velocity.lerp(dash_start_velocity / 10, pow(delta * dash_duration,100))
+		velocity.y = added_velocity.y * 10 + dash_direction.y * dash_speed
 		move_and_slide()
 		dash_timer -= delta
 		if dash_timer < 0:

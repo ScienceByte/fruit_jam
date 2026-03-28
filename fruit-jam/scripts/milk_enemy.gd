@@ -35,6 +35,7 @@ var target_hover_y = 0.0
 
 var damaged_bodies_this_stomp: Array[Node] = []
 
+var health: int = 50
 
 func _ready() -> void:
 	attack_area.monitoring = false
@@ -175,6 +176,14 @@ func handle_recover(delta: float) -> void:
 
 	if state_timer <= 0.0:
 		state = State.IDLE
+
+
+
+func take_damage(damage_taken: int) -> void:
+	print("Enemy took damage: ", damage_taken)
+	health -= damage_taken
+	if health <= 0:
+		queue_free()
 
 
 func _on_attack_area_area_entered(area: Area3D) -> void:

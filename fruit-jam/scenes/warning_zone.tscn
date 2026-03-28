@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bfskt06uejdl1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6yip4"]
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(0.84705883, 0.21960784, 0.2509804, 0.68235296)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oqcls"]
+material = SubResource("StandardMaterial3D_6yip4")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6yip4"]
+points = PackedVector3Array(0.45714286, 0.007142857, 0.45714286, -0.45714286, -0.007142857, -0.45714286, -0.45714286, 0.007142857, -0.45714286, 0.45714286, -0.007142857, -0.45714286, -0.45714286, -0.007142857, 0.45714286, -0.45714286, 0.007142857, 0.45714286, 0.45714286, 0.007142857, -0.45714286, 0.45714286, -0.007142857, 0.45714286)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" unique_id=2128236495]
+mesh = SubResource("PlaneMesh_oqcls")
+
+[node name="WarningArea" type="Area3D" parent="." unique_id=1243156290]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="WarningArea" unique_id=1385711277]
+shape = SubResource("ConvexPolygonShape3D_6yip4")

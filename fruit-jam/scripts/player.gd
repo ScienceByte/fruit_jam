@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 @onready var head: Node3D = $head
@@ -42,6 +43,9 @@ var last_attack_time= -1000000
 var is_attacking = false
 
 
+@export var max_health: int = 100
+var health: int
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	weapon_hitbox.monitoring = false
@@ -50,7 +54,15 @@ func _ready() -> void:
 		anim_player.animation_finished.connect(_on_animation_player_animation_finished)
 
 	anim_player.play("WeaponIdle")
+	health = max_health
 
+func take_damage(amount: int) -> void:
+	health = clamp(health - amount, 0, max_health)
+	print(health)
+	
+	if health <= 0:
+		print("death")
+		print("health")
 
 func _input(event):
 	# escape releases mouse

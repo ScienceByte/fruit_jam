@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @onready var head: Node3D = $head
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 var curr_speed = 5.0
 
@@ -51,6 +52,7 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		return
+		
 
 	if event is InputEventMouseButton and event.pressed and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -155,7 +157,20 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * curr_speed
 		velocity.z = direction.z * curr_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, curr_speed)
-		velocity.z = move_toward(velocity.z, 0, curr_speed)
+		velocity.x = move_toward(velocity.x, 0.0, curr_speed)
+		velocity.z = move_toward(velocity.z, 0.0, curr_speed)
+
+
+
+	
+	
+
 
 	move_and_slide()
+func _process(delta):
+	if Input.is_action_just_pressed("attack"):
+		anim_player.play("Attack")
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name  == "Attack":
+		anim_player.play("WeaponIdle")

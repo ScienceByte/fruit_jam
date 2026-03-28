@@ -2,16 +2,18 @@
 
 [ext_resource type="ArrayMesh" uid="uid://ceg4os6wno5hx" path="res://assets/Food/OBJ format/carton.obj" id="1_0p51g"]
 [ext_resource type="Script" uid="uid://grgnxjd0mcw4" path="res://scenes/milk_enemy.gd" id="1_6yip4"]
+[ext_resource type="Texture2D" uid="uid://ceatn3fdc6rld" path="res://ExpressionsAssetByVerzatileDevIndiv__g59.png" id="3_oqcls"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6yip4"]
 size = Vector3(0.83013916, 1.9495087, 0.82818604)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6yip4"]
-load_path = "res://.godot/imported/ExpressionsAssetByVerzatileDevIndiv__g87.png-451d92606df9fedc300cd394bbfe1d03.ctex"
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oqcls"]
+points = PackedVector3Array(-0.115, 0, -0.115, 0.115, 0, -0.115, -0.115, 0, 0.115, -0.115, 0.41996074, -0.115, 0.115, 0, 0.115, 0.115, 0.41996074, -0.115, -0.115, 0.41996074, 0.115, 0, 0.5905463, -0.094737664, 0, 0.5702564, -0.115, 0.115, 0.41996074, 0.115, 0.087443225, 0.5114677, -0.040502153, 0.11067737, 0.48522374, -0.02026233, 0, 0.5702564, 0.115, 0, 0.5905463, 0.094715156, 0.06420908, 0.53776944, -0.02026233, 0.11067737, 0.48522374, 0.020239823, 0.087443225, 0.5114677, 0.040479638, 0.06420908, 0.53776944, 0.020239823)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6yip4"]
 transparency = 1
-albedo_color = Color(0.84705883, 0.21960784, 0.2509804, 0.76862746)
+depth_draw_mode = 1
+albedo_color = Color(0.84705883, 0.21960784, 0.2509804, 0.68235296)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_oqcls"]
 material = SubResource("StandardMaterial3D_6yip4")
@@ -20,12 +22,40 @@ size = Vector2(0.9, 0.9)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6yip4"]
 points = PackedVector3Array(0.45714286, 0.007142857, 0.45714286, -0.45714286, -0.007142857, -0.45714286, -0.45714286, 0.007142857, -0.45714286, 0.45714286, -0.007142857, -0.45714286, -0.45714286, -0.007142857, 0.45714286, -0.45714286, 0.007142857, 0.45714286, 0.45714286, 0.007142857, -0.45714286, 0.45714286, -0.007142857, 0.45714286)
 
+[sub_resource type="Animation" id="Animation_oqcls"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D2:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.84705883, 0.21960784, 0.2509804, 0.68235296)]
+}
+
 [sub_resource type="Animation" id="Animation_6yip4"]
 resource_name = "WarningArea"
-length = 3.0
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D2:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.100000024, 1.9333333),
+"transitions": PackedFloat32Array(0.49999943, 0.49999943),
+"update": 0,
+"values": [Color(0.84705883, 0.21960784, 0.2509804, 0.68235296), Color(0.84705883, 0.21960784, 0.2509804, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oqcls"]
 _data = {
+&"RESET": SubResource("Animation_oqcls"),
 &"WarningArea": SubResource("Animation_6yip4")
 }
 
@@ -35,16 +65,24 @@ script = ExtResource("1_6yip4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1157779186]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0008850098, 0.9731064, 9.1552734e-05)
+visible = false
 shape = SubResource("BoxShape3D_6yip4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=733955765]
-transform = Transform3D(3.6, 0, 0, 0, 3.5994518, -0.06282866, 0, 0.06282866, 3.5994518, 0, 0, -0.010177493)
+transform = Transform3D(3.6, 0, 0, 0, 3.5994518, -0.06282866, 0, 0.06282866, 3.5994518, 0, 0.143561, -0.010177493)
+layers = 3
 mesh = ExtResource("1_0p51g")
 
-[node name="Face" type="Decal" parent="MeshInstance3D" unique_id=1477963357]
-transform = Transform3D(-4.3711392e-08, -1, 0, 2.30968e-07, 1.831868e-15, -1, 1, -4.3711392e-08, 2.30968e-07, 0.084945686, 0.2792767, -0.0013258674)
-size = Vector3(0.1338234, 0.17633057, 0.08709717)
-texture_albedo = SubResource("CompressedTexture2D_6yip4")
+[node name="AttackArea" type="Area3D" parent="MeshInstance3D" unique_id=298848325]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D/AttackArea" unique_id=1729971684]
+transform = Transform3D(1, 0, 0, 0, 1, 1.8626451e-09, 0, -1.8626451e-09, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_oqcls")
+
+[node name="Decal" type="Decal" parent="MeshInstance3D" unique_id=808634712]
+transform = Transform3D(-4.3711392e-08, -1, 0, -2.6077032e-08, 1.831868e-15, -1.0000004, 1.0000004, -4.3711392e-08, -2.6077032e-08, 0.04426108, 0.27520317, 0.0033067656)
+size = Vector3(0.18334961, 0.19671631, 0.1113739)
+texture_albedo = ExtResource("3_oqcls")
 upper_fade = 1e-05
 lower_fade = 1e-05
 
@@ -52,9 +90,9 @@ lower_fade = 1e-05
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.742, 0)
 mesh = SubResource("PlaneMesh_oqcls")
 
-[node name="Area3D" type="Area3D" parent="MeshInstance3D2" unique_id=1023857398]
+[node name="WarningArea" type="Area3D" parent="MeshInstance3D2" unique_id=1023857398]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D2/Area3D" unique_id=309344779]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D2/WarningArea" unique_id=309344779]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.022105217, 0)
 shape = SubResource("ConvexPolygonShape3D_6yip4")
 

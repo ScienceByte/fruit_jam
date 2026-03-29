@@ -5,7 +5,7 @@ extends Area3D
 @onready var spawn_shape: CollisionShape3D = $Area3D/spawn
 
 @export var can_enemy_scene: PackedScene = preload("res://scenes/can_enemy.tscn")
-@export var total_spawn_count: int = 4
+@export var total_spawn_count: int = 3
 @export var spawn_interval: float = 0.6
 @export var spawn_height_offset: float = 0.25
 

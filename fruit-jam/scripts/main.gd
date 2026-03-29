@@ -3,13 +3,10 @@ extends Node3D
 @export_file("*.tscn") var end_cutscene_scene_path: String = "res://scenes/ending.tscn"
 @export var enemy_group_name: StringName = &"enemy"
 @export var no_enemy_clear_delay: float = 1.0
-@export var use_test_timer: bool = true
-@export var test_timer_seconds: float = 60.0
 
 var has_seen_any_enemy := false
 var win_triggered := false
 var no_enemy_elapsed := 0.0
-var test_elapsed := 0.0
 
 func _ready() -> void:
 	set_process(true)
@@ -17,12 +14,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if win_triggered:
-		return
-
-	if use_test_timer:
-		test_elapsed += delta
-		if test_elapsed >= test_timer_seconds:
-			go_to_end_cutscene()
 		return
 
 	var enemy_count := get_tree().get_nodes_in_group(enemy_group_name).size()

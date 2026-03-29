@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c5ac06e26m2vf"]
+
+[ext_resource type="Script" uid="uid://bpk28uvar1joe" path="res://scripts/basic_npc.gd" id="1_3r1ok"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e23gn"]
+height = 2.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3r1ok"]
+height = 2.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3r1ok"]
+radius = 3.0
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1597766935]
+script = ExtResource("1_3r1ok")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1609560256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_e23gn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=265740852]
+mesh = SubResource("CapsuleMesh_3r1ok")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1182611463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4733324, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=658170593]
+shape = SubResource("SphereShape3D_3r1ok")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=2109139515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.40404403, 0, 1.1186506, 0.94833946)
+billboard = 2
+text = "balls"

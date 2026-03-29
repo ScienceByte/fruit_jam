@@ -18,19 +18,27 @@ var back_off
 var health: int = max_health
 signal health_changed(new_health: int, max_health: int)
 
-@onready var player = get_node("../../player")
+@onready var player: Node3D = get_tree().get_first_node_in_group("player")
 
 var follow = true
 
 @onready var area = $Area3D
 
 func _physics_process(delta: float) -> void:
+	if player == null or not is_instance_valid(player):
+		player = get_tree().get_first_node_in_group("player")
+
 	if abs($RigidBody3D/CollisionShape3D.global_rotation.z) > 1.4:
 		death.play()
 		fall()	
 	
 	if follow:
-		var player_position = player.position
+		if player == null:
+			velocity = Vector3.ZERO
+			move_and_slide()
+			return
+
+		var player_position = player.global_position
 		var distance_from_player : Vector3
 		distance_from_player.x = abs(position.x - player_position.x)
 		distance_from_player.y = abs(position.y - player_position.y)

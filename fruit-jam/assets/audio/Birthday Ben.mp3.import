@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://deb060fgtol31"
+path="res://.godot/imported/Birthday Ben.mp3-9c9e928aff0bbab42db5263a2ebe5f45.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Birthday Ben.mp3"
+dest_files=["res://.godot/imported/Birthday Ben.mp3-9c9e928aff0bbab42db5263a2ebe5f45.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

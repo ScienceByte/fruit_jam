@@ -2,10 +2,12 @@ extends CanvasLayer
 
 @onready var health_bar: ProgressBar = $Control/HealthBar
 @onready var stamina_bar: ProgressBar = $Control/StaminaBar
+@onready var warning_label: Label = $WarningLabel
 @onready var player: Player = $".."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	warning_label.visible = false
 	health_bar.max_value = player.max_health
 	health_bar.value = player.health
 	

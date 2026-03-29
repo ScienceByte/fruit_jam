@@ -9,6 +9,9 @@ enum State {
 	RECOVER
 }
 
+static var active_warning_sources: int = 0
+
+var warning_label: Label
 @onready var player: Node3D = get_tree().get_first_node_in_group("player")
 @onready var attack_area: Area3D = $MeshInstance3D/AttackArea
 @onready var damaged: AudioStreamPlayer3D = $damaged
@@ -16,15 +19,16 @@ enum State {
 @onready var warning_zone_root: Node3D = $MeshInstance3D2
 @onready var warning_area: Area3D = $MeshInstance3D2/WarningArea
 
-@export var stomp_trigger_range = 16.0
+@export var stomp_trigger_range = 20.0
 @export var hover_height = 10.0
-@export var ascend_speed = 18.0
+@export var ascend_speed = 10.0
 @export var hover_move_speed = 12.0
 @export var stomp_fall_speed = 30.0
-@export var hover_time = 2.2
+@export var hover_time = 2.5
 @export var recovery_time = 1.7
 @export var damage_amount = 20
 @export var landing_snap_distance: float = 0.35
+@export var initial_attack_delay: float = 0.0
 
 var state: State = State.IDLE
 var state_timer = 0.0
@@ -35,15 +39,28 @@ var start_y = 0.0
 var target_hover_y = 0.0
 
 var damaged_bodies_this_stomp: Array[Node] = []
+var attack_delay_timer: float = 0.0
+var is_warning_source_active := false
 
 var health: int = 50
 
 func _ready() -> void:
 	attack_area.monitoring = false
 	warning_zone_root.visible = false
+	resolve_warning_label()
+	refresh_warning_label_visibility()
+	attack_delay_timer = maxf(initial_attack_delay, 0.0)
 
 	if not attack_area.area_entered.is_connected(_on_attack_area_area_entered):
 		attack_area.area_entered.connect(_on_attack_area_area_entered)
+	if not warning_area.area_entered.is_connected(_on_warning_area_area_entered):
+		warning_area.area_entered.connect(_on_warning_area_area_entered)
+	if not warning_area.area_exited.is_connected(_on_warning_area_area_exited):
+		warning_area.area_exited.connect(_on_warning_area_area_exited)
+	if not warning_area.body_entered.is_connected(_on_warning_area_body_entered):
+		warning_area.body_entered.connect(_on_warning_area_body_entered)
+	if not warning_area.body_exited.is_connected(_on_warning_area_body_exited):
+		warning_area.body_exited.connect(_on_warning_area_body_exited)
 
 	print("Milk enemy ready")
 	print("Player found: ", player)
@@ -52,7 +69,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	match state:
 		State.IDLE:
-			handle_idle()
+			handle_idle(delta)
 		State.ASCEND:
 			handle_ascend(delta)
 		State.HOVER_MOVE:
@@ -66,14 +83,23 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func handle_idle() -> void:
+func handle_idle(delta: float) -> void:
 	velocity.x = 0.0
 	velocity.z = 0.0
+
+	if player == null:
+		player = get_tree().get_first_node_in_group("player")
+	if player == null:
+		return
 
 	if not is_on_floor():
 		velocity.y += get_gravity().y
 	else:
 		velocity.y = 0.0
+
+	if attack_delay_timer > 0.0:
+		attack_delay_timer = maxf(attack_delay_timer - delta, 0.0)
+		return
 
 	var dist = global_position.distance_to(player.global_position)
 	
@@ -91,6 +117,7 @@ func start_stomp_sequence() -> void:
 
 	attack_area.monitoring = false
 	warning_zone_root.visible = false
+	deactivate_warning_source()
 
 	velocity.x = 0.0
 	velocity.z = 0.0
@@ -165,6 +192,7 @@ func handle_stomp(delta: float) -> void:
 	if is_on_floor():
 		attack_area.monitoring = false
 		warning_zone_root.visible = false
+		deactivate_warning_source()
 		velocity = Vector3.ZERO
 
 		state = State.RECOVER
@@ -207,3 +235,83 @@ func update_warning_zone_under_enemy() -> void:
 		0.05,
 		global_position.z
 	)
+
+
+func _set_warning_label_for_target(target: Node) -> void:
+	if target == null:
+		return
+	if target == player or target.is_in_group("player"):
+		activate_warning_source()
+
+
+func _clear_warning_label_for_target(target: Node) -> void:
+	if target == null:
+		return
+	if target == player or target.is_in_group("player"):
+		deactivate_warning_source()
+
+
+func resolve_warning_label() -> void:
+	if player == null:
+		player = get_tree().get_first_node_in_group("player")
+	if player == null:
+		warning_label = null
+		return
+
+	warning_label = player.get_node_or_null("CanvasLayer/WarningLabel") as Label
+
+
+func set_warning_label_visible(is_visible: bool) -> void:
+	if warning_label == null:
+		resolve_warning_label()
+	if warning_label != null:
+		warning_label.visible = is_visible
+
+
+func refresh_warning_label_visibility() -> void:
+	set_warning_label_visible(active_warning_sources > 0)
+
+
+func activate_warning_source() -> void:
+	if is_warning_source_active:
+		refresh_warning_label_visibility()
+		return
+
+	is_warning_source_active = true
+	active_warning_sources += 1
+	refresh_warning_label_visibility()
+
+
+func deactivate_warning_source() -> void:
+	if not is_warning_source_active:
+		refresh_warning_label_visibility()
+		return
+
+	is_warning_source_active = false
+	active_warning_sources = maxi(active_warning_sources - 1, 0)
+	refresh_warning_label_visibility()
+
+
+func _on_warning_area_area_entered(area: Area3D) -> void:
+	_set_warning_label_for_target(area.get_parent())
+
+
+func _on_warning_area_area_exited(area: Area3D) -> void:
+	_clear_warning_label_for_target(area.get_parent())
+
+
+func _on_warning_area_body_entered(body: Node3D) -> void:
+	_set_warning_label_for_target(body)
+
+
+func _on_warning_area_body_exited(body: Node3D) -> void:
+	_clear_warning_label_for_target(body)
+
+
+func set_spawn_attack_delay(delay_seconds: float) -> void:
+	initial_attack_delay = maxf(delay_seconds, 0.0)
+	attack_delay_timer = initial_attack_delay
+
+
+func _exit_tree() -> void:
+	deactivate_warning_source()

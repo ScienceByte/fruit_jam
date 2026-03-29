@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3jvmuql26r8s"]
 
 [ext_resource type="PackedScene" uid="uid://bu1hashg37cmp" path="res://scenes/player.tscn" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://thppqw2bal7g" path="res://assets/Food/FBX format/carton.fbx" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://ckcf1ks2a8na1" path="res://scenes/counter.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dqh2km438de3t" path="res://scenes/kitchen_boundary.tscn" id="3_sugp2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
@@ -30,9 +30,10 @@ shadow_enabled = true
 environment = SubResource("Environment_jyhfs")
 
 [node name="player" parent="." unique_id=962974825 instance=ExtResource("1_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7248716, 3.8115406, -6.0810375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7248716, 5.717743, -6.0810375)
 
 [node name="Kitchen Boundary" parent="." unique_id=1499721593 instance=ExtResource("3_sugp2")]
+transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 0, 0)
 
-[node name="carton" parent="." unique_id=532949371 instance=ExtResource("3_jyhfs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7121167, 3.851457, -6.531034)
+[node name="Counter" parent="." unique_id=473552293 instance=ExtResource("3_jyhfs")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 39.351902, 0, 63.03228)

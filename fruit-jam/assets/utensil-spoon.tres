@@ -1,11 +1,8 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://dpyialwsdahdw"]
 
-[ext_resource type="Texture2D" uid="uid://cmnt807a7l0bl" path="res://assets/Food/FBX format/Textures/colormap.png" id="1_cdcid"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hoc0e"]
 resource_name = "colormap"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_cdcid")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mne5l"]

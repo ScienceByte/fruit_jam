@@ -6,10 +6,10 @@ extends CharacterBody3D
 
 var curr_speed = 5.0
 
-@export var walking_speed = 5.0
+@export var walking_speed = 10.0
 const sprinting_speed = 25.0
 const crouch_speed = 3.0
-const jump_velocity = 4.5
+const jump_velocity = 10	
 
 const mouse_sens = 0.2
 

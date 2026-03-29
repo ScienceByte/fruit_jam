@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c0hv0xklje1np"]
 
-[ext_resource type="ArrayMesh" uid="uid://ceg4os6wno5hx" path="res://assets/Food/OBJ format/carton.obj" id="1_0p51g"]
-[ext_resource type="Script" uid="uid://grgnxjd0mcw4" path="res://scenes/milk_enemy.gd" id="1_6yip4"]
-[ext_resource type="Texture2D" uid="uid://ceatn3fdc6rld" path="res://ExpressionsAssetByVerzatileDevIndiv__g59.png" id="3_oqcls"]
+[ext_resource type="ArrayMesh" path="res://assets/Food/OBJ format/carton.obj" id="1_0p51g"]
+[ext_resource type="Script" path="res://scenes/milk_enemy.gd" id="1_6yip4"]
+[ext_resource type="Texture2D" uid="uid://ceatn3fdc6rld" path="res://assets/ExpressionsAssetByVerzatileDevIndiv__g59.png" id="3_oqcls"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6yip4"]
 size = Vector3(0.83013916, 1.9495087, 0.82818604)

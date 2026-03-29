@@ -11,9 +11,9 @@ enum State {
 @onready var player: Node3D = get_tree().get_first_node_in_group("player")
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
-@onready var hitbox: Area3D = $"Pivot/can-open2/Area3D"
-@onready var attack_box: Area3D = $"Pivot/can-open2/Area3D2"
-@onready var can_open_2: MeshInstance3D = $"Pivot/can-open2"
+@onready var hitbox: Area3D = $"Pivot/MeshInstance3D/Area3D"
+@onready var attack_box: Area3D = $"Pivot/MeshInstance3D/Area3D2"
+@onready var can_open_2: MeshInstance3D = $"Pivot/MeshInstance3D"
 
 @onready var standing_collision: CollisionShape3D = $StandingCollision
 @onready var rolling_collision: CollisionShape3D = $RollingCollision

@@ -4,10 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://cm1dbmf7nhqfd" path="res://scenes/enemy.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dqh2km438de3t" path="res://scenes/kitchen_boundary.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://ckcf1ks2a8na1" path="res://scenes/counter.tscn" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://dvhfvjgg1edqx" path="res://scenes/oven.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" path="res://scenes/oven.tscn" id="5_tbgi4"]
 [ext_resource type="ArrayMesh" uid="uid://dc22pll2tuxcj" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/kitchentable_B.obj" id="6_tipki"]
 [ext_resource type="ArrayMesh" uid="uid://bm1pug35t8uhl" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/pot_large.obj" id="7_85g3d"]
 [ext_resource type="ArrayMesh" uid="uid://b5w7al8vpcfny" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/SYONSCABINET.obj" id="8_choun"]
+[ext_resource type="PackedScene" uid="uid://c0hv0xklje1np" path="res://scenes/milk_enemy.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://blfcfbtsm8apo" path="res://scenes/can_enemy.tscn" id="10_choun"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tipki"]
 sky_top_color = Color(0.22392395, 0.4674489, 0.67756546, 1)
@@ -116,7 +118,7 @@ shape = 0
 material = SubResource("FogMaterial_choun")
 
 [node name="player" parent="." unique_id=962974825 instance=ExtResource("1_0wfyh")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.7248716, 8.902506, -6.0810375)
+transform = Transform3D(-0.06273585, 0, -0.4960486, 0, 0.5, 0, 0.4960486, 0, -0.06273585, 3.7248716, 8.902506, -0.29564857)
 
 [node name="Kitchen Boundary" parent="." unique_id=1499721593 instance=ExtResource("3_sugp2")]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
@@ -180,3 +182,9 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -9.724566, 1.3784072, -
 
 [node name="Enemy2" parent="NavigationRegion3D" unique_id=1630531314 groups=["enemy"] instance=ExtResource("3_jyhfs")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -17.14536, 1.3784053, -30.233776)
+
+[node name="MilkBody" parent="." unique_id=1657694849 instance=ExtResource("9_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.620436, 8.003752, -6.851238)
+
+[node name="CharacterBody3D" parent="." unique_id=606682438 instance=ExtResource("10_choun")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 8.990591, 8.003752, 1.6603689)

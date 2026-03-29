@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="fruit jam"
-run/main_scene="uid://blfcfbtsm8apo"
+run/main_scene="uid://ctaqpmbu3vmhg"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/icon.svg"
 

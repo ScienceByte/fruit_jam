@@ -72,6 +72,10 @@ func _process(delta: float) -> void:
 		damaged_targets_this_swing.clear()
 		weapon_hitbox.monitoring = true
 		anim_player.play("WeaponAttack")
+		
+	if health <= 0:
+		get_tree().change_scene_to_file("res://scenes/death.tscn")
+
 
 func _on_weapon_hitbox_area_entered(area: Area3D) -> void:
 	_apply_weapon_damage(area)

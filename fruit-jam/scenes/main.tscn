@@ -4,15 +4,15 @@
 [ext_resource type="Script" uid="uid://0j61m1748uu2" path="res://scripts/main.gd" id="1_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://dqh2km438de3t" path="res://scenes/kitchen_boundary.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://ckcf1ks2a8na1" path="res://scenes/counter.tscn" id="4_jyhfs"]
-[ext_resource type="PackedScene" path="res://scenes/oven.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dvhfvjgg1edqx" path="res://scenes/oven.tscn" id="5_tbgi4"]
 [ext_resource type="ArrayMesh" uid="uid://dc22pll2tuxcj" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/kitchentable_B.obj" id="6_tipki"]
 [ext_resource type="ArrayMesh" uid="uid://bm1pug35t8uhl" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/pot_large.obj" id="7_85g3d"]
 [ext_resource type="ArrayMesh" uid="uid://b5w7al8vpcfny" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/SYONSCABINET.obj" id="8_choun"]
-[ext_resource type="Script" path="res://scripts/can_spawn.gd" id="9_choun"]
+[ext_resource type="Script" uid="uid://c0megmhgx6vey" path="res://scripts/can_spawn.gd" id="9_choun"]
 [ext_resource type="PackedScene" uid="uid://c5ac06e26m2vf" path="res://scenes/basic_npc.tscn" id="10_choun"]
 [ext_resource type="AudioStream" uid="uid://cenh67nkop0jb" path="res://assets/audio/goldensoundlabs-waltz-life-462704.mp3" id="11_ya4ey"]
-[ext_resource type="Script" path="res://scripts/egg_spawn.gd" id="12_eb6dy"]
-[ext_resource type="PackedScene" uid="uid://c6nhs0w5rcfn0" path="res://scenes/dialogue_manager.tscn" id="12_trceg"]
+[ext_resource type="Script" uid="uid://34xamgd5fw6f" path="res://scripts/egg_spawn.gd" id="12_eb6dy"]
+[ext_resource type="PackedScene" path="res://scenes/dialogue_manager.tscn" id="12_trceg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tipki"]
 sky_top_color = Color(0.22392395, 0.4674489, 0.67756546, 1)
@@ -76,7 +76,7 @@ size = Vector3(5.708252, 4.9776154, 5.7319336)
 [sub_resource type="BoxShape3D" id="BoxShape3D_trceg"]
 size = Vector3(12.97934, 9.255981, 12.280701)
 
-[node name="Main" type="Node3D" unique_id=2054266872]
+[node name="Main2" type="Node3D" unique_id=2054266872]
 script = ExtResource("1_ya4ey")
 
 [node name="lighting" type="Node3D" parent="." unique_id=832965324]

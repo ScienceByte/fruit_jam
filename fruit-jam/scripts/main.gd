@@ -18,7 +18,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if win_triggered:
 		return
-
+		
 	if use_test_timer:
 		test_elapsed += delta
 		if test_elapsed >= test_timer_seconds:

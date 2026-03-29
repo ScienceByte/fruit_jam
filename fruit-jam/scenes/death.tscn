@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://n4wdabissrxk"]
+
+[ext_resource type="AudioStream" uid="uid://b7jimwgkupgne" path="res://assets/audio/Ben dead.mp3" id="1_0hhgj"]
+[ext_resource type="Texture2D" uid="uid://3cbra1sjl3gx" path="res://assets/ded.png" id="1_w8wr1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w8wr1"]
+load_path = "res://.godot/imported/orangina.png-0f49a8ed0fe3cc5d470045942ae38902.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jc8es"]
+transparency = 1
+albedo_texture = SubResource("CompressedTexture2D_w8wr1")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_tjai8"]
+material = SubResource("StandardMaterial3D_jc8es")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tjai8"]
+transparency = 1
+albedo_texture = ExtResource("1_w8wr1")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_q1r8t"]
+material = SubResource("StandardMaterial3D_tjai8")
+
+[sub_resource type="Environment" id="Environment_q1r8t"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_6up1m"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("orangina")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, -1.3340067)
+
+[sub_resource type="Animation" id="Animation_w0no0"]
+resource_name = "new_animation"
+length = 33.566666
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("orangina")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, -1.3340067, 1, 1, 0, -0.34074098, -1.3340067, 1.8, 1, 0, 0, -1.3340067, 1.8333334, 1, 0, 0, -1.3340067, 2.8, 1, 0, -0.34074098, -1.3340067, 2.8333335, 1, 0, -0.34074098, -1.3340067, 3.6, 1, 0, 0.046973646, -1.3340067, 3.6333332, 1, 0, 0.046973646, -1.3340067, 3.7, 1, 0, 0, -1.3340067, 4.7000003, 1, 0, -0.34074098, -1.3340067, 5.5, 1, 0, 0.046973646, -1.3340067, 5.5666666, 1, 0, 0, -1.3340067, 6.5666666, 1, 0, -0.34074098, -1.3340067, 7.366667, 1, 0, 0, -1.3340067, 8.366667, 1, 0, -0.34074098, -1.3340067, 9.166667, 1, 0, 0, -1.3340067, 10.166667, 1, 0, -0.34074098, -1.3340067, 10.966667, 1, 0, 0.046973646, -1.3340067, 12.433333, 1, 0, 0, -1.3340067, 13.433333, 1, 0, -0.34074098, -1.3340067, 14.233334, 1, 0, 0.046973646, -1.3340067, 15.033334, 1, 0, 0, -1.3340067, 16.033333, 1, 0, -0.34074098, -1.3340067, 16.833334, 1, 0, 0.046973646, -1.3340067, 17.6, 1, 0, 0, -1.3340067, 18.599998, 1, 0, -0.34074098, -1.3340067, 19.400002, 1, 0, 0.046973646, -1.3340067, 19.866667, 1, 0, 0, -1.3340067, 20.866665, 1, 0, -0.34074098, -1.3340067, 21.133333, 1, 0, 0, -1.3340067, 21.666668, 1, 0, 0.046973646, -1.3340067, 22.133331, 1, 0, -0.34074098, -1.3340067, 22.933334, 1, 0, 0.046973646, -1.3340067, 23.466667, 1, 0, 0.046973646, -1.3340067, 24.233334, 1, 0, 0, -1.3340067, 25.233332, 1, 0, -0.34074098, -1.3340067, 26.033335, 1, 0, 0.046973646, -1.3340067, 26.866667, 1, 0, 0, -1.3340067, 27.866665, 1, 0, -0.34074098, -1.3340067, 28.666668, 1, 0, 0.046973646, -1.3340067, 30.133333, 1, 0, 0, -1.3340067, 31.133331, 1, 0, -0.34074098, -1.3340067, 31.933334, 1, 0, 0.046973646, -1.3340067, 32.266666, 1, 0, 0, -1.3340067, 33.266663, 1, 0, -0.34074098, -1.3340067, 34.066666, 1, 0, 0.046973646, -1.3340067)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7205l"]
+_data = {
+&"RESET": SubResource("Animation_6up1m"),
+&"new_animation": SubResource("Animation_w0no0")
+}
+
+[node name="death" type="Node3D" unique_id=150932846]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=325729066]
+
+[node name="orangina" type="MeshInstance3D" parent="." unique_id=1702498357]
+transform = Transform3D(-2.9888787, 0, -0.25807723, 0, 3, 0, 0.25807723, 0, -2.9888787, 0, 0, -1.3340067)
+mesh = SubResource("QuadMesh_tjai8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1988928704]
+transform = Transform3D(-2.9888787, 0, -0.25807723, 0, 3, 0, 0.25807723, 0, -2.9888787, 0, 0.79133815, -1.3340067)
+mesh = SubResource("QuadMesh_q1r8t")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1827813168]
+environment = SubResource("Environment_q1r8t")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=556148792]
+stream = ExtResource("1_0hhgj")
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=770220032]
+libraries/ = SubResource("AnimationLibrary_7205l")
+autoplay = &"new_animation"

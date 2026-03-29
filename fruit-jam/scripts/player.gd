@@ -43,6 +43,9 @@ var damaged_targets_this_swing: Array[Node] = []
 @export var max_health: int = 100
 var health: int = 100
 signal health_changed(new_health: int, max_health: int)
+@export var knockback_control_lock_duration: float = 0.25
+@export var knockback_ground_friction: float = 28.0
+var knockback_timer: float = 0.0
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -113,6 +116,15 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		print("death")
 		print("health")
+
+
+func apply_knockback(launch_velocity: Vector3) -> void:
+	is_dashing = false
+	dash_timer = 0.0
+	knockback_timer = knockback_control_lock_duration
+	velocity.x = launch_velocity.x
+	velocity.z = launch_velocity.z
+	velocity.y = max(velocity.y, launch_velocity.y)
 
 func _input(event):
 	# escape releases mouse
@@ -191,6 +203,14 @@ func _physics_process(delta) -> void:
 		velocity.y += get_gravity().y * delta
 		#velocity.x += air_resistence.x * delta
 		#velocity.z += air_resistence.z * delta
+
+	if knockback_timer > 0.0:
+		knockback_timer = max(knockback_timer - delta, 0.0)
+		if is_on_floor():
+			velocity.x = move_toward(velocity.x, 0.0, knockback_ground_friction * delta)
+			velocity.z = move_toward(velocity.z, 0.0, knockback_ground_friction * delta)
+		move_and_slide()
+		return
 
 	# If player presses space, jump 
 	if Input.is_action_pressed("ui_accept"):

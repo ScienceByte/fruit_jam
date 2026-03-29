@@ -8,13 +8,20 @@ extends CanvasLayer
 func _ready() -> void:
 	health_bar.max_value = player.max_health
 	health_bar.value = player.health
-
+	
+	if not player.health_changed.is_connected(_on_player_health_changed):
+		player.health_changed.connect(_on_player_health_changed)
 	stamina_bar.min_value = 0
 	stamina_bar.max_value = player.dash_cooldown_ms
-	stamina_bar.value = player.dash_cooldown_ms  # full at start, meaning dash is ready
+	
+	stamina_bar.value = player.dash_cooldown_ms 
 
 func _process(_delta: float) -> void:
 	update_stamina_bar()
+
+func _on_player_health_changed(new_health: int, max_health: int) -> void:
+	health_bar.max_value = max_health
+	health_bar.value = new_health
 
 func update_stamina_bar() -> void:
 	var now := Time.get_ticks_msec()

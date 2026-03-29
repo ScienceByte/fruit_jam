@@ -143,12 +143,6 @@ func start_dash():
 	
 	dash_start_velocity = Vector3(velocity.x, .02 * -$head.global_transform.basis.z.y , velocity.z)
 
-func _physics_process(delta: float) -> void:
-	var now : int = Time.get_ticks_msec()
-	#print("(",global_transform.basis.z.x, "," ,-$head.global_transform.basis.z.y, "," ,global_transform.basis.z.z, ")")
-	#if (now - last_dash_time) >= dash_cooldown:
-		#print("Dash ready")
-	#print($"../enemy/RigidBody3D/CollisionShape3D".global_rotation.z)
 
 
 func start_attack(now: int) -> void:
@@ -218,11 +212,9 @@ func _physics_process(delta) -> void:
 			velocity.x = move_toward(velocity.x, 0.0, curr_speed)
 			velocity.z = move_toward(velocity.z, 0.0, curr_speed)	
 		move_and_slide()
-	
-func _process(delta):
-	if Input.is_action_just_pressed("attack"):
-		anim_player.play("Attack")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name  == "Attack":
+	if anim_name == "WeaponAttack":
+		is_attacking = false
+		weapon_hitbox.monitoring = false
 		anim_player.play("WeaponIdle")

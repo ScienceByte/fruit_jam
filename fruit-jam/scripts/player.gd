@@ -45,7 +45,9 @@ var is_attacking = false
 var damaged_targets_this_swing: Array[Node] = []
 
 @export var max_health: int = 100
-var health: int
+var health: int = 100
+signal health_changed(new_health: int, max_health: int)
+
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -60,6 +62,7 @@ func _ready() -> void:
 	if not weapon_hitbox.area_entered.is_connected(_on_weapon_hitbox_area_entered):
 		weapon_hitbox.area_entered.connect(_on_weapon_hitbox_area_entered)
 	health = max_health
+	health_changed.emit(health, max_health)
 
 
 func _process(delta: float) -> void:
@@ -91,7 +94,8 @@ func _on_weapon_hitbox_area_entered(area: Area3D) -> void:
 func take_damage(amount: int) -> void:
 	health = clamp(health - amount, 0, max_health)
 	print(health)
-	
+	health_changed.emit(health, max_health)
+
 	if health <= 0:
 		print("death")
 		print("health")

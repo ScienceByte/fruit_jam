@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://d3jvmuql26r8s"]
 
 [ext_resource type="PackedScene" uid="uid://bu1hashg37cmp" path="res://scenes/player.tscn" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://0j61m1748uu2" path="res://scripts/main.gd" id="1_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://dqh2km438de3t" path="res://scenes/kitchen_boundary.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://ckcf1ks2a8na1" path="res://scenes/counter.tscn" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://dvhfvjgg1edqx" path="res://scenes/oven.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" path="res://scenes/oven.tscn" id="5_tbgi4"]
 [ext_resource type="ArrayMesh" uid="uid://dc22pll2tuxcj" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/kitchentable_B.obj" id="6_tipki"]
 [ext_resource type="ArrayMesh" uid="uid://bm1pug35t8uhl" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/pot_large.obj" id="7_85g3d"]
 [ext_resource type="ArrayMesh" uid="uid://b5w7al8vpcfny" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/SYONSCABINET.obj" id="8_choun"]
@@ -74,6 +75,7 @@ size = Vector3(5.708252, 4.9776154, 5.7319336)
 size = Vector3(12.97934, 9.255981, 12.280701)
 
 [node name="Main" type="Node3D" unique_id=2054266872]
+script = ExtResource("1_ya4ey")
 
 [node name="lighting" type="Node3D" parent="." unique_id=832965324]
 

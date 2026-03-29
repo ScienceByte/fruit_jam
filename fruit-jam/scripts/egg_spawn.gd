@@ -20,10 +20,12 @@ var defeated_count := 0
 var milk_wave_spawned := false
 var spawn_timer: Timer
 var defeated_egg_ids: Dictionary = {}
+var scene_default_milk_scale: Vector3 = Vector3.ONE
 
 
 func _ready() -> void:
 	randomize()
+	cache_scene_default_milk_scale()
 
 	spawn_timer = Timer.new()
 	spawn_timer.one_shot = false
@@ -115,8 +117,10 @@ func spawn_milk_wave() -> void:
 
 		var angle := TAU * float(i) / float(count)
 		var offset := Vector3(cos(angle) * milk_spawn_radius, milk_spawn_height_offset, sin(angle) * milk_spawn_radius)
-		(milk_enemy as Node3D).global_position = global_position + offset
-		get_tree().current_scene.add_child(milk_enemy)
+		var milk_enemy_3d := milk_enemy as Node3D
+		get_tree().current_scene.add_child(milk_enemy_3d)
+		milk_enemy_3d.global_position = global_position + offset
+		milk_enemy_3d.scale = scene_default_milk_scale
 
 		if milk_enemy.has_method("set_spawn_attack_delay"):
 			milk_enemy.call("set_spawn_attack_delay", milk_attack_stagger_seconds * float(i))
@@ -131,3 +135,13 @@ func _on_area_entered(area: Area3D) -> void:
 	var target := area.get_parent()
 	if target != null and target.is_in_group("player"):
 		start_spawning()
+
+
+func cache_scene_default_milk_scale() -> void:
+	if milk_enemy_scene == null:
+		scene_default_milk_scale = Vector3.ONE
+		return
+
+	var probe := milk_enemy_scene.instantiate()
+	if probe is Node3D:
+		scene_default_milk_scale = (probe as Node3D).scale

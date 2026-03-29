@@ -16,7 +16,7 @@ points = PackedVector3Array(-0.115, 0, -0.115, 0.115, 0, -0.115, -0.115, 0, 0.11
 points = PackedVector3Array(-0.45, 0, -0.45, -0.45, 0, 0.45, 0.45, 0, -0.45, 0.45, 0, 0.45)
 
 [node name="MilkBody" type="CharacterBody3D" unique_id=1657694849 groups=["enemy"]]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_6yip4")

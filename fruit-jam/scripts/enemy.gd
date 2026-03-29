@@ -24,6 +24,11 @@ var follow = true
 
 @onready var area = $Area3D
 
+
+func _ready() -> void:
+	if not is_in_group("enemy"):
+		add_to_group("enemy")
+
 func _physics_process(delta: float) -> void:
 	if player == null or not is_instance_valid(player):
 		player = get_tree().get_first_node_in_group("player")

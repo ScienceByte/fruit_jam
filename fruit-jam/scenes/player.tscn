@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dblen0fops1qg" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="ArrayMesh" uid="uid://dpyialwsdahdw" path="res://assets/utensil-spoon.tres" id="2_qhqgy"]
 [ext_resource type="Script" uid="uid://dmq57l8cmoivg" path="res://scripts/canvas_layer.gd" id="3_qhqgy"]
+[ext_resource type="ArrayMesh" uid="uid://oq8lpsukmbvl" path="res://assets/Food/OBJ format/banana.obj" id="4_dqkch"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3vyb7"]
 height = 0.40161133
@@ -25,10 +26,10 @@ tracks/0/path = NodePath("../WeaponPivot:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0009999999, 0.7),
-"transitions": PackedFloat32Array(0.21763767, 8.876545),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector3(2.557239, 0, 0)]
+"values": []
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -37,10 +38,10 @@ tracks/1/path = NodePath("../WeaponPivot/MeshInstance3D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0009999999, 0.7),
-"transitions": PackedFloat32Array(0.21763767, 0.21763767),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector3(0.12535587, -0.28178537, 1.5346181)]
+"values": []
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -49,10 +50,10 @@ tracks/2/path = NodePath("../WeaponPivot/MeshInstance3D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector3(0.45400196, -1.1437978, -0.37598038)]
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_g2els"]
@@ -175,11 +176,15 @@ shape = SubResource("CapsuleShape3D_3vyb7")
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=767498973]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8000002, 0)
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="head/Camera3D" unique_id=626393310]
+transform = Transform3D(-1.5298986e-07, 3.5, 1.5298986e-07, -1.1920929e-07, -1.5298986e-07, 3.5, 3.5, 1.5298986e-07, 0, -0.47188216, -1.1057935, -1.1920929e-07)
+mesh = ExtResource("4_dqkch")
+
 [node name="WeaponPivot" type="Node3D" parent="head" unique_id=2115086773]
 transform = Transform3D(1, 0, 0, 0, -0.83406883, -0.5516604, 0, 0.55166036, -0.83406895, 0.42399997, -0.10045862, -0.39558053)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="head/WeaponPivot" unique_id=1042450476]
-transform = Transform3D(-7.0221796e-07, -6.2477326, -1.7932804, 6.4447827, 0.23326214, -0.8126814, 0.8454957, -1.7780439, 6.194655, 0.45400196, -1.1437978, -0.37598038)
+transform = Transform3D(-7.506468e-07, -6.2477326, -1.7932805, 6.4447827, 0.23326214, -0.8126815, 0.84549576, -1.7780441, 6.194655, 0.45400196, -1.1437978, -0.37598038)
 mesh = ExtResource("2_qhqgy")
 
 [node name="Area3D" type="Area3D" parent="head/WeaponPivot/MeshInstance3D" unique_id=909128664]

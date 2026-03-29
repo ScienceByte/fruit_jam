@@ -3,6 +3,8 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hoc0e"]
 resource_name = "colormap"
 vertex_color_use_as_albedo = true
+metallic = 0.85
+roughness = 0.8
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mne5l"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dblen0fops1qg" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="ArrayMesh" uid="uid://dpyialwsdahdw" path="res://assets/utensil-spoon.tres" id="2_qhqgy"]
+[ext_resource type="ArrayMesh" uid="uid://oq8lpsukmbvl" path="res://assets/Food/OBJ format/banana.obj" id="2_qlg0r"]
 [ext_resource type="Script" uid="uid://dmq57l8cmoivg" path="res://scripts/canvas_layer.gd" id="3_qhqgy"]
 [ext_resource type="AudioStream" uid="uid://b1lk5vcu1k0cu" path="res://assets/audio/666herohero-slash-21834.mp3" id="4_dqkch"]
 
@@ -54,7 +55,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_g2els"]
 resource_name = "WeaponAttack"
-length = 0.4
+length = 0.43333334
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -62,10 +63,10 @@ tracks/0/path = NodePath("../WeaponPivot:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.36666667),
-"transitions": PackedFloat32Array(1, 0.23325826),
+"times": PackedFloat32Array(0, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 0.23325826, 0.34151006),
 "update": 0,
-"values": [Vector3(2.7393816, 0, 0), Vector3(0.8237431, 0, 0)]
+"values": [Vector3(2.7393816, 0, 0), Vector3(0.8237431, 0, 0), Vector3(2.5307274, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -171,13 +172,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3811438)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8000002, 0)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="head/Camera3D" unique_id=626393310]
-transform = Transform3D(-1.5298986e-07, 3.5, 1.5298986e-07, -1.1920929e-07, -1.5298986e-07, 3.5, 3.5, 1.5298986e-07, 0, -0.47188216, -1.1057935, -1.1920929e-07)
+transform = Transform3D(-1.5298986e-07, 3.5, 1.5298986e-07, 0, -1.5298986e-07, 3.5, 3.5, 1.5298986e-07, 6.6873992e-15, -0.47188216, -1.1057935, -1.1920929e-07)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="head/Camera3D" unique_id=495310295]
+transform = Transform3D(6, 0, 0, 0, 2.1926847, 2.7280273, 0, -2.7280273, 2.1926847, 0, -1.0833435, -0.05909705)
+mesh = ExtResource("2_qlg0r")
 
 [node name="WeaponPivot" type="Node3D" parent="head" unique_id=2115086773]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.42399997, -0.10045862, -0.39558053)
+transform = Transform3D(1, 0, 0, 0, -0.9201977, -0.391454, 0, 0.39145395, -0.92019784, 0.12039906, -0.10045862, -0.39558053)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="head/WeaponPivot" unique_id=1042450476]
-transform = Transform3D(6.5000067, 0, 0, 0, 6.5000024, 0, 0, 0, 6.5000043, 0, 0, 0)
+transform = Transform3D(-7.0221796e-07, -6.247734, -1.7932804, 6.4447827, 0.2332622, -0.8126814, 0.8454957, -1.7780443, 6.194655, 0.45400196, -1.1437978, -0.37598038)
 mesh = ExtResource("2_qhqgy")
 
 [node name="Area3D" type="Area3D" parent="head/WeaponPivot/MeshInstance3D" unique_id=909128664]

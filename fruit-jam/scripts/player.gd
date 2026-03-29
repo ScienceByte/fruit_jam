@@ -71,6 +71,8 @@ func _process(delta: float) -> void:
 
 func _on_weapon_hitbox_area_entered(area: Area3D) -> void:
 	var target := area.get_parent()
+	while target and not target.is_in_group("enemy"):
+		target = target.get_parent()
 
 	if target == null:
 		return

@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://d26g5e6a5k857" path="res://assets/audio/Happy Birthday Type Beat (Prod. Wxsterr) [TubeRipper.cc].mp3" id="9_75aq2"]
 [ext_resource type="AudioStream" uid="uid://deb060fgtol31" path="res://assets/audio/Birthday Ben.mp3" id="9_e6d8c"]
 [ext_resource type="Texture2D" uid="uid://44wd0hmb16t2" path="res://assets/bluenate.png" id="9_o5uye"]
+[ext_resource type="Texture2D" uid="uid://druy30podvme0" path="res://assets/brokingli.png" id="10_e6d8c"]
 [ext_resource type="ArrayMesh" uid="uid://oq8lpsukmbvl" path="res://assets/Food/OBJ format/banana.obj" id="10_o5uye"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tipki"]
@@ -82,6 +83,14 @@ billboard_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_vlhxo"]
 material = SubResource("StandardMaterial3D_7g6bj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1snb8"]
+transparency = 1
+albedo_texture = ExtResource("10_e6d8c")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_7g6bj"]
+material = SubResource("StandardMaterial3D_1snb8")
 
 [sub_resource type="Animation" id="Animation_o5uye"]
 length = 0.001
@@ -278,8 +287,12 @@ mesh = SubResource("QuadMesh_1snb8")
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 3, 37.881424, 1.4053555, 16.549286)
 mesh = SubResource("QuadMesh_vlhxo")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="npc" unique_id=498402234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.95627, 0.89117813, 17.258259)
+mesh = SubResource("QuadMesh_7g6bj")
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1515030863]
-transform = Transform3D(-0.9836847, 2.2351742e-08, -0.1799012, -0.042863637, 0.9712008, 0.23437491, 0.17472021, 0.23826224, -0.9553554, 31.216286, 9.323059, -36.333527)
+transform = Transform3D(-0.9836847, 2.980232e-08, -0.17990118, -0.042863622, 0.97120076, 0.23437487, 0.17472021, 0.23826219, -0.95535535, 31.216286, 9.323059, -36.333527)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D" unique_id=1547383426]
 transform = Transform3D(5.9997706, -0.014670581, -0.02640489, 0.05103731, 1.1580188, 3.302742, -0.008755431, -3.302842, 1.1580993, 0.0122795105, -0.45166492, 0.4213333)

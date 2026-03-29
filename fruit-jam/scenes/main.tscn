@@ -7,12 +7,11 @@
 [ext_resource type="ArrayMesh" uid="uid://dc22pll2tuxcj" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/kitchentable_B.obj" id="6_tipki"]
 [ext_resource type="ArrayMesh" uid="uid://bm1pug35t8uhl" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/pot_large.obj" id="7_85g3d"]
 [ext_resource type="ArrayMesh" uid="uid://b5w7al8vpcfny" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/SYONSCABINET.obj" id="8_choun"]
-[ext_resource type="PackedScene" uid="uid://c0hv0xklje1np" path="res://scenes/milk_enemy.tscn" id="9_85g3d"]
+[ext_resource type="Script" path="res://scripts/can_spawn.gd" id="9_choun"]
 [ext_resource type="PackedScene" uid="uid://c5ac06e26m2vf" path="res://scenes/basic_npc.tscn" id="10_choun"]
-[ext_resource type="PackedScene" uid="uid://c6nhs0w5rcfn0" path="res://scenes/dialogue_manager.tscn" id="11_ya4ey"]
-[ext_resource type="Script" uid="uid://c0megmhgx6vey" path="res://scripts/can_spawn.gd" id="9_choun"]
 [ext_resource type="AudioStream" uid="uid://cenh67nkop0jb" path="res://assets/audio/goldensoundlabs-waltz-life-462704.mp3" id="11_ya4ey"]
-[ext_resource type="Script" uid="uid://34xamgd5fw6f" path="res://scripts/egg_spawn.gd" id="12_eb6dy"]
+[ext_resource type="Script" path="res://scripts/egg_spawn.gd" id="12_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://c6nhs0w5rcfn0" path="res://scenes/dialogue_manager.tscn" id="12_trceg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tipki"]
 sky_top_color = Color(0.22392395, 0.4674489, 0.67756546, 1)
@@ -209,10 +208,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.163208, 0.9002582, 27.3464
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.474102, 1.5880495, 43.94064)
 dialogue_id = "party_store"
 
-[node name="DialogueUI" parent="." unique_id=1099601049 instance=ExtResource("11_ya4ey")]
 [node name="EggSpawn" type="Area3D" parent="." unique_id=261769891]
 script = ExtResource("12_eb6dy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EggSpawn" unique_id=1701808373]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.935522, 2.4273624, 30.056473)
 shape = SubResource("BoxShape3D_trceg")
+
+[node name="DialogueUI" parent="." unique_id=1099601049 instance=ExtResource("12_trceg")]

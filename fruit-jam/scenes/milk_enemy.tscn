@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c0hv0xklje1np"]
+
+[ext_resource type="ArrayMesh" uid="uid://ceg4os6wno5hx" path="res://assets/Food/OBJ format/carton.obj" id="1_0p51g"]
+[ext_resource type="Script" uid="uid://grgnxjd0mcw4" path="res://scripts/milk_enemy.gd" id="1_6yip4"]
+[ext_resource type="Texture2D" uid="uid://ceatn3fdc6rld" path="res://ExpressionsAssetByVerzatileDevIndiv__g59.png" id="3_oqcls"]
+[ext_resource type="PackedScene" uid="uid://bfskt06uejdl1" path="res://scenes/warning_zone.tscn" id="4_jeoqb"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oqcls"]
+points = PackedVector3Array(-0.115, 0, -0.115, 0.115, 0, -0.115, -0.115, 0, 0.115, -0.115, 0.41996074, -0.115, 0.115, 0, 0.115, 0.115, 0.41996074, -0.115, -0.115, 0.41996074, 0.115, 0, 0.5905463, -0.094737664, 0, 0.5702564, -0.115, 0.115, 0.41996074, 0.115, 0.087443225, 0.5114677, -0.040502153, 0.11067737, 0.48522374, -0.02026233, 0, 0.5702564, 0.115, 0, 0.5905463, 0.094715156, 0.06420908, 0.53776944, -0.02026233, 0.11067737, 0.48522374, 0.020239823, 0.087443225, 0.5114677, 0.040479638, 0.06420908, 0.53776944, 0.020239823)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jeoqb"]
+points = PackedVector3Array(-0.115, 0, -0.115, 0.115, 0, -0.115, -0.115, 0, 0.115, -0.115, 0.41996074, -0.115, 0.115, 0, 0.115, 0.115, 0.41996074, -0.115, -0.115, 0.41996074, 0.115, 0, 0.5905463, -0.094737664, 0, 0.5702564, -0.115, 0.115, 0.41996074, 0.115, 0.087443225, 0.5114677, -0.040502153, 0.11067737, 0.48522374, -0.02026233, 0, 0.5702564, 0.115, 0, 0.5905463, 0.094715156, 0.06420908, 0.53776944, -0.02026233, 0.11067737, 0.48522374, 0.020239823, 0.087443225, 0.5114677, 0.040479638, 0.06420908, 0.53776944, 0.020239823)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_keg2g"]
+points = PackedVector3Array(-0.45, 0, -0.45, -0.45, 0, 0.45, 0.45, 0, -0.45, 0.45, 0, 0.45)
+
+[node name="MilkBody" type="CharacterBody3D" unique_id=1657694849 groups=["enemy"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_6yip4")
+
+[node name="MeshInstance3D2" parent="." unique_id=2128236495 instance=ExtResource("4_jeoqb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2138041010]
+transform = Transform3D(3.6, 0, 0, 0, 3.5994518, -0.06282866, 0, 0.06282866, 3.5994518, 0, 0.31347215, -0.010177493)
+shape = SubResource("ConvexPolygonShape3D_oqcls")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=733955765]
+transform = Transform3D(3.6, 0, 0, 0, 3.5994518, -0.06282866, 0, 0.06282866, 3.5994518, 0, 0.31347215, -0.010177493)
+mesh = ExtResource("1_0p51g")
+
+[node name="Decal" type="Decal" parent="MeshInstance3D" unique_id=808634712]
+transform = Transform3D(-4.3711392e-08, -1, 0, -2.6077032e-08, 1.831868e-15, -1.0000004, 1.0000004, -4.3711392e-08, -2.6077032e-08, 0.04426108, 0.27520317, 0.0033067656)
+size = Vector3(0.18334961, 0.19671631, 0.1113739)
+texture_albedo = ExtResource("3_oqcls")
+upper_fade = 1e-05
+lower_fade = 1e-05
+
+[node name="AttackArea" type="Area3D" parent="MeshInstance3D" unique_id=298848325]
+collision_layer = 64
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D/AttackArea" unique_id=1437140897]
+transform = Transform3D(1, 0, 0, 0, 1, 1.8626451e-09, 0, -1.8626451e-09, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jeoqb")
+
+[node name="HurtBox" type="Area3D" parent="." unique_id=2015739169]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="HurtBox" unique_id=1275379169]
+shape = SubResource("ConvexPolygonShape3D_keg2g")

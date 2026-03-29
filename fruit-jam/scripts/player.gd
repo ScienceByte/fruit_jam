@@ -1,20 +1,21 @@
+class_name Player
 extends CharacterBody3D
 
 @onready var head: Node3D = $head
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var weapon_hitbox: Area3D = $head/WeaponPivot/MeshInstance3D/Area3D
 
-var curr_speed = 5.0
+var curr_speed: float = 5.0
 
-@export var walking_speed = 5.0
-const sprinting_speed = 10.0
+@export var walking_speed :float = 5.0
+const sprinting_speed = 25.0
 const crouch_speed = 3.0
-const jump_velocity = 4.5
+const jump_velocity = 10	
 
-const mouse_sens  = 0.2
+const mouse_sens = 0.2
 
 # something like walking on ice.
 var lerp_speed = 15.0
-
 var direction = Vector3.ZERO
 
 # dash settings
@@ -32,17 +33,76 @@ var last_dash_time : int = -1000
 var air_resistence : Vector3 = Vector3(-16,0,-16)
 
 
-func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+# attack settings
+var last_attack_time= -1000000
+@export var attack_cooldown_ms: int = 100
+@export var weapon_damage = 10
+var is_attacking = false
+var damaged_targets_this_swing: Array[Node] = []
 
+@export var max_health: int = 100
+var health: int = 100
+signal health_changed(new_health: int, max_health: int)
+
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	weapon_hitbox.monitoring = false
+
+	if not anim_player.animation_finished.is_connected(_on_animation_player_animation_finished):
+		anim_player.animation_finished.connect(_on_animation_player_animation_finished)
+
+	
+	anim_player.play("WeaponIdle")
+	
+	if not weapon_hitbox.area_entered.is_connected(_on_weapon_hitbox_area_entered):
+		weapon_hitbox.area_entered.connect(_on_weapon_hitbox_area_entered)
+	health = max_health
+	health_changed.emit(health, max_health)
+
+
+func _process(delta: float) -> void:
+	var now := Time.get_ticks_msec()
+
+	if Input.is_action_just_pressed("attack") and now - last_attack_time >= attack_cooldown_ms:
+		last_attack_time = now
+		damaged_targets_this_swing.clear()
+		weapon_hitbox.monitoring = true
+		anim_player.play("WeaponAttack")
+
+func _on_weapon_hitbox_area_entered(area: Area3D) -> void:
+	var target := area.get_parent()
+
+	if target == null:
+		return
+
+	if damaged_targets_this_swing.has(target):
+		return
+
+	print("Weapon hit: ", area.name, " parent: ", target.name)
+
+	if target.is_in_group("enemy"):
+		if target.has_method("take_damage"):
+			target.take_damage(weapon_damage)
+			damaged_targets_this_swing.append(target)
+
+
+func take_damage(amount: int) -> void:
+	health = clamp(health - amount, 0, max_health)
+	print(health)
+	health_changed.emit(health, max_health)
+
+	if health <= 0:
+		print("death")
+		print("health")
 
 func _input(event):
-	##### escape button releases mouse ######
+	# escape releases mouse
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		return
 		
 
+	# click to recapture mouse
 	if event is InputEventMouseButton and event.pressed and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		return
@@ -91,7 +151,21 @@ func _physics_process(delta: float) -> void:
 	#print($"../enemy/RigidBody3D/CollisionShape3D".global_rotation.z)
 
 
-	# input action
+func start_attack(now: int) -> void:
+	last_attack_time = now
+	is_attacking = true
+	weapon_hitbox.monitoring = true
+	anim_player.play("WeaponAttack")
+
+
+func _physics_process(delta) -> void:
+	var now: int = Time.get_ticks_msec()
+
+	# attack input
+	if Input.is_action_just_pressed("attack") and not is_attacking and now - last_attack_time >= attack_cooldown_ms:
+		start_attack(now)
+
+	# movement speed
 	if Input.is_action_pressed("crouch"):
 		curr_speed = crouch_speed
 	elif Input.is_action_pressed("sprint"):

@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://cjv3p62qhn3ls"]
+
+[ext_resource type="Script" uid="uid://dblen0fops1qg" path="res://scripts/player.gd" id="1_mca4t"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3vyb7"]
+height = 3.0
+radius = 1.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_3vyb7"]
+size = Vector3(0.1, 1.4, 0.1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3vyb7"]
+points = PackedVector3Array(0.049999997, 0.67241377, 0.049999997, -0.05603448, -0.70603454, -0.05603448, -0.05603448, -0.70603454, 0.05258621, -0.05603448, 0.70603454, -0.05603448, 0.05258621, -0.70603454, -0.05603448, -0.05603448, 0.70603454, 0.05258621, 0.05258621, 0.70603454, -0.05603448, 0.049999997, -0.67241377, 0.049999997)
+
+[sub_resource type="Animation" id="Animation_qhqgy"]
+resource_name = "new_animation"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.3052444, 0, 0), Vector3(-0.6508334, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/WeaponMesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.529467, 0, 0), Vector3(-1.529467, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/WeaponMesh:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.44319236, 0.061819553, -1.2737255), Vector3(0.44319236, 0.061819553, -1.2737255)]
+}
+
+[sub_resource type="Animation" id="Animation_g2els"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.3052444, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/WeaponMesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.529467, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/WeaponMesh:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.44319236, 0.061819553, -1.2737255)]
+}
+
+[sub_resource type="Animation" id="Animation_dqkch"]
+resource_name = "WeaponIdle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/WeaponMesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.870047),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.529467, 0, 0), Vector3(-1.529467, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/WeaponMesh:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.870047),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.44319236, 0.061819553, -1.2737255), Vector3(0.44319236, 0.061819553, -1.2737255)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.870047),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.3052444, 0, 0), Vector3(1.2307991, -0.14226854, -0.23549338)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qlg0r"]
+_data = {
+&"Attack": SubResource("Animation_qhqgy"),
+&"RESET": SubResource("Animation_g2els"),
+&"WeaponIdle": SubResource("Animation_dqkch")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
+radius = 0.5839844
+height = 2.3666992
+
+[node name="player2" type="CharacterBody3D" unique_id=962974825]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4425573, 0)
+script = ExtResource("1_mca4t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=560687087]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026331902, 0)
+shape = SubResource("CylinderShape3D_3vyb7")
+
+[node name="head" type="Node3D" parent="." unique_id=744396276]
+
+[node name="Camera3D" type="Camera3D" parent="head" unique_id=767498973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="Node3D" type="Node3D" parent="head/Camera3D" unique_id=373138296]
+transform = Transform3D(1, 0, 0, 0, 0.26244178, -0.96494776, 0, 0.96494764, 0.2624418, 0, -0.94032764, -0.2925465)
+
+[node name="WeaponMesh" type="MeshInstance3D" parent="head/Camera3D/Node3D" unique_id=731349635]
+transform = Transform3D(1, 0, 0, 0, 0.074371636, 0.99914587, 0, -1.7984629, 0.041317567, 0.44319236, 0.061819553, -1.2737255)
+mesh = SubResource("BoxMesh_3vyb7")
+
+[node name="weapon_hitbox" type="Area3D" parent="head/Camera3D/Node3D/WeaponMesh" unique_id=224527068]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="head/Camera3D/Node3D/WeaponMesh/weapon_hitbox" unique_id=1930076908]
+transform = Transform3D(1, 0, 0, 0, 1, 2.9802322e-08, 0, -5.9604645e-08, 1.0000001, -0.44570112, 5.9604645e-08, 0)
+shape = SubResource("ConvexPolygonShape3D_3vyb7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2059140621]
+root_node = NodePath("../head/Camera3D")
+libraries/ = SubResource("AnimationLibrary_qlg0r")
+autoplay = &"WeaponIdle"
+playback_default_blend_time = 0.01
+movie_quit_on_finish = true
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=391381118]
+
+[node name="HitBox" type="CollisionShape3D" parent="Hurtbox" unique_id=1878387257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18334961, 0)
+shape = SubResource("CapsuleShape3D_3vyb7")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

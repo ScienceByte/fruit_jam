@@ -9,7 +9,7 @@ radius = 0.5839844
 height = 2.3666992
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_g2els"]
-height = 0.47958657
+height = 0.573065
 radius = 0.0139
 
 [sub_resource type="Animation" id="Animation_qhqgy"]
@@ -182,7 +182,7 @@ mesh = ExtResource("2_qhqgy")
 [node name="Area3D" type="Area3D" parent="head/WeaponPivot/MeshInstance3D" unique_id=909128664]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="head/WeaponPivot/MeshInstance3D/Area3D" unique_id=2002614325]
-transform = Transform3D(1.4901161e-07, -0.9999989, -8.940697e-08, 3.3846145, 2.2351742e-08, -2.9802322e-08, 2.3841858e-07, -4.4703484e-08, 1.5384603, -5.9604645e-08, 0.13573755, 0.03497097)
+transform = Transform3D(-2.9802322e-08, -0.99999905, 1.1920929e-06, 3.3846145, 2.3394823e-06, 1.4901161e-07, -1.1920929e-07, 8.940697e-07, 1.5384618, -0.04673922, 0.13573763, 0.034971)
 shape = SubResource("CylinderShape3D_g2els")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2059140621]

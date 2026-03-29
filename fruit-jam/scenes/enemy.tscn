@@ -19,21 +19,32 @@ resource_name = "egg"
 image = SubResource("Image_md0e3")
 
 [node name="Enemy" type="CharacterBody3D" unique_id=143697681]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.8653797, 0)
 script = ExtResource("1_7p1mj")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1448266721]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+[node name="Area3D" type="Area3D" parent="." unique_id=1612090774]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -0.168149, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1547303518]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0009765625, -0.07752991, 0.0051298887)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=691449530]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.01171875, 4.7288766, 0.061558668)
 shape = SubResource("BoxShape3D_md0e3")
-
-[node name="Sprite3D" type="Sprite3D" parent="RigidBody3D/CollisionShape3D" unique_id=1952311990]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.031829834, 0.014226168)
-billboard = 1
-texture = SubResource("ImageTexture_md0e3")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=74492780]
 debug_enabled = true
+debug_path_custom_color = Color(0, 0.76557606, 0.22067079, 1)
 
 [node name="deathTimer" type="Timer" parent="." unique_id=1594852350]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1389617220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004882813, 2.1319573, 0.0025649439)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=562012903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00097656244, -1.1391528, 0.0051298896)
+shape = SubResource("BoxShape3D_md0e3")
+
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody3D/CollisionShape3D" unique_id=960623699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34435534, 0.014226168)
+billboard = 1
+texture = SubResource("ImageTexture_md0e3")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

@@ -769,6 +769,9 @@ data = PackedVector3Array(-0.0029, 0.6235, -0.5656, -0.0029, 1.6427, -0.5656, -0
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_grb0a"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grb0a"]
+albedo_color = Color(0.34246552, 0.13821092, 0, 1)
+
 [node name="Kitchen Boundary" type="Node3D" unique_id=1499721593]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 
@@ -1035,11 +1038,6 @@ surface_material_override/0 = ExtResource("1_grb0a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.0710974, -2)
 shape = SubResource("ConcavePolygonShape3D_qi6a4")
 
-[node name="FloorBig_055" type="MeshInstance3D" parent="StaticBody3D" unique_id=343854253]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.0710974, 0)
-mesh = SubResource("ArrayMesh_ihkat")
-surface_material_override/0 = ExtResource("1_grb0a")
-
 [node name="CollisionShape3D35" type="CollisionShape3D" parent="StaticBody3D" unique_id=1744730983]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.0710974, 0)
 shape = SubResource("ConcavePolygonShape3D_ubnbp")
@@ -1128,3 +1126,23 @@ shape = SubResource("ConcavePolygonShape3D_2n6ad")
 [node name="FloorCollision" type="CollisionShape3D" parent="StaticBody3D" unique_id=1012315030]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0002952397, 0)
 shape = SubResource("WorldBoundaryShape3D_grb0a")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D" unique_id=1476098203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99965405, 2.0070083, -0.005859375)
+size = Vector3(0.12207031, 0.15966797, 2.015625)
+material = SubResource("StandardMaterial3D_grb0a")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="StaticBody3D" unique_id=842943161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9868186, 2.0070083, -0.005859375)
+size = Vector3(0.12207031, 0.15966797, 2.015625)
+material = SubResource("StandardMaterial3D_grb0a")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="StaticBody3D" unique_id=385615533]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.9992552, 2.0070083, 0.93524647)
+size = Vector3(0.12207031, 0.15966797, 2.015625)
+material = SubResource("StandardMaterial3D_grb0a")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="StaticBody3D" unique_id=171101449]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.9986064, 2.0070083, -0.95588017)
+size = Vector3(0.12207031, 0.15966797, 2.0859375)
+material = SubResource("StandardMaterial3D_grb0a")

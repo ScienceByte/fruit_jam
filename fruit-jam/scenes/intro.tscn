@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ctaqpmbu3vmhg"]
+
+[ext_resource type="Texture2D" uid="uid://cjav4g6ghvef3" path="res://assets/title card.png" id="1_ioskq"]
+[ext_resource type="Script" uid="uid://be72inus86cf0" path="res://scenes/intro.gd" id="1_yjqpq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yjqpq"]
+albedo_texture = ExtResource("1_ioskq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4bx60"]
+material = SubResource("StandardMaterial3D_yjqpq")
+
+[sub_resource type="Environment" id="Environment_i2l1n"]
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 16.0
+
+[sub_resource type="Animation" id="Animation_wfs7u"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.5153289, 0)
+
+[sub_resource type="Animation" id="Animation_es01l"]
+resource_name = "intro"
+length = 14.5
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.033333335, 1, 0, -0.698897, -0.13958754, 13.8, 1, 0, 1.0977758, -0.13958754)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0naf5"]
+_data = {
+&"RESET": SubResource("Animation_wfs7u"),
+&"intro": SubResource("Animation_es01l")
+}
+
+[node name="intro" type="Node3D" unique_id=302032005]
+script = ExtResource("1_yjqpq")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1517893767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2050017)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1900282058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5153289, 0)
+mesh = SubResource("QuadMesh_4bx60")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=718575709]
+environment = SubResource("Environment_i2l1n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=144780204]
+libraries/ = SubResource("AnimationLibrary_0naf5")
+autoplay = &"intro"

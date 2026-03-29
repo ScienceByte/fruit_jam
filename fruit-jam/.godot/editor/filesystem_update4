@@ -1,7 +1,3 @@
-res://scenes/enemy.tscn
 res://scenes/main.tscn
-res://scenes/enemy.gd
-res://assets/npcs/egg.png
-res://scripts/enemy.gd
-res://scripts/player.gd
-res://scenes/player.tscn
+res://assets/utensil-spoon.tres
+res://scripts/canvas_layer.gd

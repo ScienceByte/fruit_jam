@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://n4wdabissrxk"]
 
 [ext_resource type="AudioStream" uid="uid://b7jimwgkupgne" path="res://assets/audio/Ben dead.mp3" id="1_0hhgj"]
+[ext_resource type="Texture2D" uid="uid://44wd0hmb16t2" path="res://assets/bluenate.png" id="1_tjai8"]
 [ext_resource type="Texture2D" uid="uid://3cbra1sjl3gx" path="res://assets/ded.png" id="1_w8wr1"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w8wr1"]
@@ -13,6 +14,14 @@ billboard_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_tjai8"]
 material = SubResource("StandardMaterial3D_jc8es")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7g6bj"]
+transparency = 1
+albedo_texture = ExtResource("1_tjai8")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_6up1m"]
+material = SubResource("StandardMaterial3D_7g6bj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tjai8"]
 transparency = 1
@@ -61,6 +70,10 @@ _data = {
 [node name="orangina" type="MeshInstance3D" parent="." unique_id=1702498357]
 transform = Transform3D(-2.9888787, 0, -0.25807723, 0, 3, 0, 0.25807723, 0, -2.9888787, 0, 0, -1.3340067)
 mesh = SubResource("QuadMesh_tjai8")
+
+[node name="nate" type="MeshInstance3D" parent="." unique_id=1220266647]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 3, -1.3260611, 0, -1.4287189)
+mesh = SubResource("QuadMesh_6up1m")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1988928704]
 transform = Transform3D(-2.9888787, 0, -0.25807723, 0, 3, 0, 0.25807723, 0, -2.9888787, 0, 0.79133815, -1.3340067)

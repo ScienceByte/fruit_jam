@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d3jvmuql26r8s"]
 
 [ext_resource type="PackedScene" uid="uid://bu1hashg37cmp" path="res://scenes/player.tscn" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://ckcf1ks2a8na1" path="res://scenes/counter.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dqh2km438de3t" path="res://scenes/kitchen_boundary.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://c0hv0xklje1np" path="res://scenes/milk_enemy.tscn" id="4_jyhfs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -35,5 +35,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7248716, 5.717743, -6.08103
 [node name="Kitchen Boundary" parent="." unique_id=1499721593 instance=ExtResource("3_sugp2")]
 transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 0, 0)
 
-[node name="Counter" parent="." unique_id=473552293 instance=ExtResource("3_jyhfs")]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 39.351902, 0, 63.03228)
+[node name="MilkBody" parent="." unique_id=1657694849 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.47959733, 0.73933303, -10.006388)

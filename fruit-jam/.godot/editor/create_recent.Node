@@ -1,9 +1,0 @@
-StaticBody3D
-Timer
-NavigationAgent3D
-CharacterBody3D
-MeshInstance3D
-NavigationRegion3D
-CollisionShape3D
-Sprite3D
-RigidBody3D

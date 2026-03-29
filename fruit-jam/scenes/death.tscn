@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://n4wdabissrxk"]
 
 [ext_resource type="AudioStream" uid="uid://b7jimwgkupgne" path="res://assets/audio/Ben dead.mp3" id="1_0hhgj"]
+[ext_resource type="Script" uid="uid://g58vpwqw53jv" path="res://scenes/death.gd" id="1_q1r8t"]
 [ext_resource type="Texture2D" uid="uid://44wd0hmb16t2" path="res://assets/bluenate.png" id="1_tjai8"]
 [ext_resource type="Texture2D" uid="uid://3cbra1sjl3gx" path="res://assets/ded.png" id="1_w8wr1"]
 
@@ -78,6 +79,7 @@ _data = {
 }
 
 [node name="death" type="Node3D" unique_id=150932846]
+script = ExtResource("1_q1r8t")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=325729066]
 

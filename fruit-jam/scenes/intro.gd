@@ -5,6 +5,8 @@ extends Node3D
 func _ready() -> void:
 	anim.animation_finished.connect(_on_animation_finished)
 	anim.play("intro")   # Start your intro animation
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
 
 func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "intro":

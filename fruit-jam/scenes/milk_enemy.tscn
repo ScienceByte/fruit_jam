@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c0hv0xklje1np"]
 
-[ext_resource type="ArrayMesh" uid="uid://ceg4os6wno5hx" path="res://assets/Food/OBJ format/carton.obj" id="1_0p51g"]
+[ext_resource type="ArrayMesh" uid="uid://63m3uc7tqqy0" path="res://assets/Food/Models/OBJ format/carton.obj" id="1_0p51g"]
 [ext_resource type="Script" uid="uid://grgnxjd0mcw4" path="res://scripts/milk_enemy.gd" id="1_6yip4"]
-[ext_resource type="Texture2D" uid="uid://ceatn3fdc6rld" path="res://ExpressionsAssetByVerzatileDevIndiv__g59.png" id="3_oqcls"]
+[ext_resource type="Texture2D" uid="uid://ceatn3fdc6rld" path="res://assets/ExpressionsAssetByVerzatileDevIndiv__g59.png" id="3_oqcls"]
 [ext_resource type="PackedScene" uid="uid://bfskt06uejdl1" path="res://scenes/warning_zone.tscn" id="4_jeoqb"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oqcls"]

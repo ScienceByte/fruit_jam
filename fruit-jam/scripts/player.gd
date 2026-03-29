@@ -43,10 +43,14 @@ var damaged_targets_this_swing: Array[Node] = []
 @export var max_health: int = 100
 var health: int = 100
 signal health_changed(new_health: int, max_health: int)
+@export var knockback_control_lock_duration: float = 0.25
+@export var knockback_ground_friction: float = 28.0
+var knockback_timer: float = 0.0
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	weapon_hitbox.monitoring = false
+	weapon_hitbox.collision_mask = 3
 
 	if not anim_player.animation_finished.is_connected(_on_animation_player_animation_finished):
 		anim_player.animation_finished.connect(_on_animation_player_animation_finished)
@@ -70,22 +74,37 @@ func _process(delta: float) -> void:
 		anim_player.play("WeaponAttack")
 
 func _on_weapon_hitbox_area_entered(area: Area3D) -> void:
+	_apply_weapon_damage(area)
 	var target := area.get_parent()
 	while target and not target.is_in_group("enemy"):
 		target = target.get_parent()
 
+
+
+func _apply_weapon_damage(hit_node: Node) -> void:
+	var target := _resolve_damage_target(hit_node)
 	if target == null:
 		return
 
 	if damaged_targets_this_swing.has(target):
 		return
 
-	print("Weapon hit: ", area.name, " parent: ", target.name)
+	print("Weapon hit: ", hit_node.name, " target: ", target.name)
 
-	if target.is_in_group("enemy"):
-		if target.has_method("take_damage"):
-			target.take_damage(weapon_damage)
-			damaged_targets_this_swing.append(target)
+	if target != self and not target.is_in_group("player") and target.has_method("take_damage"):
+		target.take_damage(weapon_damage)
+		damaged_targets_this_swing.append(target)
+
+
+func _resolve_damage_target(hit_node: Node) -> Node:
+	var current := hit_node
+
+	while current != null:
+		if current != self and current.has_method("take_damage"):
+			return current
+		current = current.get_parent()
+
+	return null
 
 
 func take_damage(amount: int) -> void:
@@ -96,6 +115,15 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		print("death")
 		print("health")
+
+
+func apply_knockback(launch_velocity: Vector3) -> void:
+	is_dashing = false
+	dash_timer = 0.0
+	knockback_timer = knockback_control_lock_duration
+	velocity.x = launch_velocity.x
+	velocity.z = launch_velocity.z
+	velocity.y = max(velocity.y, launch_velocity.y)
 
 func _input(event):
 	# escape releases mouse
@@ -174,6 +202,14 @@ func _physics_process(delta) -> void:
 		velocity.y += get_gravity().y * delta
 		#velocity.x += air_resistence.x * delta
 		#velocity.z += air_resistence.z * delta
+
+	if knockback_timer > 0.0:
+		knockback_timer = max(knockback_timer - delta, 0.0)
+		if is_on_floor():
+			velocity.x = move_toward(velocity.x, 0.0, knockback_ground_friction * delta)
+			velocity.z = move_toward(velocity.z, 0.0, knockback_ground_friction * delta)
+		move_and_slide()
+		return
 
 	# If player presses space, jump 
 	if Input.is_action_pressed("ui_accept"):

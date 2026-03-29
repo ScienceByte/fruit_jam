@@ -1,44 +1,81 @@
-#extends Node3D
-#
-#@onready var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-#@onready var rigidbody = $RigidBody3D
-#
-#
-#
-#func _physics_process(delta: float) -> void:
-	#rigidbody.linear_velocity.y += rigidbody.get_gravity().y * delta
-#extends CharacterBody3D
-#
-#var movement_speed: float = 2.0
-#var movement_target_position: Vector3 = Vector3(-3.0,0.0,2.0)
-#
-#@onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
-#
-#func _ready():
-	## These values need to be adjusted for the actor's speed
-	## and the navigation layout.
-	#navigation_agent.path_desired_distance = 0.5
-	#navigation_agent.target_desired_distance = 0.5
-#
-	## Make sure to not await during _ready.
-	#actor_setup.call_deferred()
-#
-#func actor_setup():
-	## Wait for the first physics frame so the NavigationServer can sync.
-	#await get_tree().physics_frame
-#
-	## Now that the navigation map is no longer empty, set the movement target.
-	#set_movement_target(movement_target_position)
-#
-#func set_movement_target(movement_target: Vector3):
-	#navigation_agent.set_target_position(movement_target)
-#
-#func _physics_process(delta):
-	#if navigation_agent.is_navigation_finished():
-		#return
-#
-	#var current_agent_position: Vector3 = global_position
-	#var next_path_position: Vector3 = navigation_agent.get_next_path_position()
-#
-	#velocity = current_agent_position.direction_to(next_path_position) * movement_speed
-	#move_and_slide()
+extends CharacterBody3D
+
+@onready var navAg = $NavigationAgent3D
+@export var movement_speed = 10
+@onready var dTime = $deathTimer 
+
+var back_off_time = 0
+var back_off
+
+@export var max_health: int = 40
+var health: int = max_health
+signal health_changed(new_health: int, max_health: int)
+
+@onready var player = get_node("../player")
+
+var follow = true
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_up"):
+		var player_position = get_node("../player").position
+		navAg.set_target_position(player_position)
+
+func _physics_process(delta: float) -> void:
+	#print($RigidBody3D/CollisionShape3D.global_rotation.z)
+	if abs($RigidBody3D/CollisionShape3D.global_rotation.z) > 1.4:
+		fall()
+
+	
+	if follow:
+		var player_position = player.position
+		var distance_from_player = position - player_position
+		distance_from_player = abs(distance_from_player)
+
+		if (back_off_time <= 0) and (pow(distance_from_player.x, 2) + pow(distance_from_player.z, 2) + pow(distance_from_player.y, 2) < 1.5):
+			back_off = true
+			back_off_time = 100
+			player_position.x += -player.global_transform.basis.z.x * randi_range(6, 8)
+			player_position.z += -player.global_transform.basis.z.z * randi_range(6, 8)
+			navAg.set_target_position(player_position)
+			player.take_damage(10)
+			
+
+		if not back_off:
+			navAg.set_target_position(player_position)
+		else:
+			if back_off_time <= 0:
+				back_off = false
+			back_off_time -= 1
+			
+		var destination = navAg.get_next_path_position()
+		var local_destination = destination - global_position
+		var direction = local_destination.normalized()
+		if abs(destination - position) > Vector3(0.1, 0.1, 0.1):
+			velocity = direction * movement_speed
+			move_and_slide()
+	#print(health)
+
+
+
+func take_damage(amount: int) -> void:
+	health = clamp(health - amount, 0, max_health)
+	print(health , " enemy")
+	health_changed.emit(health, max_health)
+	if health <= 30:
+		$RigidBody3D/CollisionShape3D/Sprite3D.texture = load("res://assets/npcs/eggHit1.png")
+	if health <= 20:
+		$RigidBody3D/CollisionShape3D/Sprite3D.texture = load("res://assets/npcs/eggHit2.png")
+	if health <= 10:
+		$RigidBody3D/CollisionShape3D/Sprite3D.texture = load("res://assets/npcs/eggHit3.png")
+	if health <= 0:
+		fall()
+		
+		
+func fall() -> void:
+	follow = false
+	$RigidBody3D/CollisionShape3D/Sprite3D.billboard = false
+	$RigidBody3D/CollisionShape3D.rotation_degrees.x = 0
+	$RigidBody3D/CollisionShape3D.rotation_degrees.y = 0
+	$RigidBody3D/CollisionShape3D.rotation_degrees.z = 0
+	$RigidBody3D/CollisionShape3D.scale.z = 0.3
+	$RigidBody3D/CollisionShape3D/Sprite3D.texture = load("res://assets/npcs/cracked.png")

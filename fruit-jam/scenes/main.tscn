@@ -23,7 +23,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_sugp2"]
-vertices = PackedVector3Array(-0.5, 0.5, -0.5000001, -0.5, 0.5, 0.49999988, 0.5, 0.5, 0.49999988, 0.5, 0.5, -0.5000001)
+vertices = PackedVector3Array(-0.5207939, -11.989258, -0.39715195, -0.5207939, -11.989258, 0.60284805, 0.4792061, -11.989258, 0.60284805, 0.4792061, -11.989258, -0.39715195)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jyhfs"]
@@ -53,7 +53,7 @@ shadow_enabled = true
 environment = SubResource("Environment_jyhfs")
 
 [node name="player" parent="." unique_id=962974825 instance=ExtResource("1_0wfyh")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.7248716, 3.8115406, -6.0810375)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.7248716, 8.902506, -6.0810375)
 
 [node name="Kitchen Boundary" parent="." unique_id=1499721593 instance=ExtResource("3_sugp2")]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
@@ -62,11 +62,11 @@ transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9819164, 11.034401, -26.517986)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1089340105]
-transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 50, 145.46484, 0.027533054, -19.962854)
+transform = Transform3D(1.0491724, 0, 49.9828, 0, 1, 0, -39.986244, 0, 1.3114656, 3.021347, 12.305481, -0.36371803)
 navigation_mesh = SubResource("NavigationMesh_sugp2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=1707584624]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 4.3603354, -12.489258, 0.10284823)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000002, -0.020793915, -12.489258, 0.10284826)
 mesh = SubResource("PlaneMesh_jyhfs")
 
 [node name="Counter" parent="." unique_id=473552293 instance=ExtResource("4_jyhfs")]

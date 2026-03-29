@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5kft5karani4"
-path="res://.godot/imported/eggR.png-ba499e13e291a89a02a5fbf7583d0dc5.ctex"
+uid="uid://ypc34mmsr21l"
+path="res://.godot/imported/cracked.png-aa9428fbe276b4ccf65ca430a860111f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/npcs/eggR.png"
-dest_files=["res://.godot/imported/eggR.png-ba499e13e291a89a02a5fbf7583d0dc5.ctex"]
+source_file="res://assets/npcs/cracked.png"
+dest_files=["res://.godot/imported/cracked.png-aa9428fbe276b4ccf65ca430a860111f.ctex"]
 
 [params]
 

@@ -11,9 +11,8 @@ height = 2.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_3r1ok"]
 radius = 3.0
 
-[node name="basic_npc" type="CharacterBody3D" unique_id=1597766935]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1597766935]
 script = ExtResource("1_3r1ok")
-dialogue_id = "the_counter"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1609560256]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)

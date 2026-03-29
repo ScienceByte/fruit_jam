@@ -13,6 +13,7 @@ var player_hurtbox: Area3D = null
 
 #### text duration
 @export var interaction_text_duration: float = 2.5
+@export var dialogue_id: String = ""
 var interaction_started: bool = false
 var interaction_timer: float = 0.0
 
@@ -75,10 +76,12 @@ func _input(event: InputEvent) -> void:
 		interaction_started = true
 		interaction_timer = interaction_text_duration
 		_refresh_interact_popup_visibility()
+		if dialogue_id != "":
+			DialogueManager.start_conversation(dialogue_id)
 
 
 func _is_interact_event(event: InputEvent) -> bool:
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("Interact"):
 		return true
 
 	if event is InputEventKey:

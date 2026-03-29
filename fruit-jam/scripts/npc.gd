@@ -12,7 +12,7 @@ var start_position: Vector3
 var wander_target: Vector3
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@onready var interaction_area: Area3D = $InteractionArea
+@onready var interaction_area: Area3D = $Area3D
 var player_node: Node3D = null
 
 func _ready() -> void:
@@ -72,14 +72,14 @@ func _on_timer_timeout() -> void:
 
 # NPC LOGIC
 func _on_player_entered(body: Node3D) -> void:
-	if body.name == "Player_Ben":
+	if body.name == "player":
 		player_node = body
 
 func _on_player_exited(body: Node3D) -> void:
-	if body.name == "Player_Ben":
+	if body.name == "player":
 		player_node = null
 
 func _unhandled_input(event: InputEvent) -> void:
-	if player_node != null and event.is_action_pressed("interact"):
+	if player_node != null and event.is_action_pressed("Interact"):
 		current_state = State.TALKING
 		DialogueManager.start_conversation(dialogue_id)

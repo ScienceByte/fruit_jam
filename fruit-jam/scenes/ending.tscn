@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cpgq7hniil4x0"]
 
-[ext_resource type="PackedScene" uid="uid://bu1hashg37cmp" path="res://scenes/player.tscn" id="1_o5uye"]
 [ext_resource type="PackedScene" uid="uid://dqh2km438de3t" path="res://scenes/kitchen_boundary.tscn" id="2_e6d8c"]
 [ext_resource type="PackedScene" uid="uid://ckcf1ks2a8na1" path="res://scenes/counter.tscn" id="3_jc8es"]
 [ext_resource type="PackedScene" uid="uid://dvhfvjgg1edqx" path="res://scenes/oven.tscn" id="4_1snb8"]
@@ -8,7 +7,9 @@
 [ext_resource type="ArrayMesh" uid="uid://bm1pug35t8uhl" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/pot_large.obj" id="6_vlhxo"]
 [ext_resource type="ArrayMesh" uid="uid://b5w7al8vpcfny" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/SYONSCABINET.obj" id="7_oo1ka"]
 [ext_resource type="AudioStream" uid="uid://d26g5e6a5k857" path="res://assets/audio/Happy Birthday Type Beat (Prod. Wxsterr) [TubeRipper.cc].mp3" id="9_75aq2"]
+[ext_resource type="AudioStream" uid="uid://deb060fgtol31" path="res://assets/audio/Birthday Ben.mp3" id="9_e6d8c"]
 [ext_resource type="Texture2D" uid="uid://44wd0hmb16t2" path="res://assets/bluenate.png" id="9_o5uye"]
+[ext_resource type="ArrayMesh" uid="uid://oq8lpsukmbvl" path="res://assets/Food/OBJ format/banana.obj" id="10_o5uye"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tipki"]
 sky_top_color = Color(0.22392395, 0.4674489, 0.67756546, 1)
@@ -82,6 +83,68 @@ billboard_mode = 2
 [sub_resource type="QuadMesh" id="QuadMesh_vlhxo"]
 material = SubResource("StandardMaterial3D_7g6bj")
 
+[sub_resource type="Animation" id="Animation_o5uye"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 31.216286, 9.323059, -36.333527)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("npc/orangina")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 35.427166, 0.8725147, 16.459915)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("npc/nate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 37.881424, 1.4053555, 16.549286)
+
+[sub_resource type="Animation" id="Animation_e6d8c"]
+resource_name = "first scene"
+length = 29.766666
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 31.216286, 9.323059, -36.333527, 1, 1, 33.733852, 9.323059, -40.010548, 3.2333333, 1, 34.040405, 9.323059, -36.045105)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(1, 1, 0, 0, 0, 1, 1.9333333, 1, 0, 0.99591285, 0, -0.090319715, 3.2, 1, -0.010838205, 0.9887165, 0.11950776, -0.08966708)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("npc/orangina")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 36, 0.873, 16.46, 1, 1, 36, 0.8901415, 16.46, 1.3, 1, 36, 0.84157467, 16.46, 1.5666667, 1, 36, 0.89985657, 16.46, 1.7666667, 1, 36, 0.85181904, 16.46, 1.9, 1, 36, 1.0077076, 16.46, 2.1, 1, 36, 0.84157467, 16.46, 2.3666668, 1, 36, 0.89985657, 16.46, 2.5666666, 1, 36, 0.85181904, 16.46, 2.6999998, 1, 36, 1.0077076, 16.46, 2.8666666, 1, 36, 0.84157467, 16.46, 2.8999999, 1, 36, 0.8492279, 16.46, 3.1333334, 1, 36, 0.89985657, 16.46, 3.3333333, 1, 36, 0.85181904, 16.46, 3.4666665, 1, 36, 1.0077076, 16.46, 3.6666665, 1, 36, 0.8492279, 16.46, 3.7, 1, 36, 0.84157467, 16.46, 3.966667, 1, 36, 0.89985657, 16.46, 4.166667, 1, 36, 0.85181904, 16.46, 4.3, 1, 36, 1.0077076, 16.46, 4.5, 1, 36, 0.84157467, 16.46, 4.766667, 1, 36, 0.89985657, 16.46, 4.966667, 1, 36, 0.85181904, 16.46, 5.1000004, 1, 36, 1.0077076, 16.46, 5.266667, 1, 36, 0.84157467, 16.46, 5.3, 1, 36, 0.8492279, 16.46, 5.533334, 1, 36, 0.89985657, 16.46, 5.733334, 1, 36, 0.85181904, 16.46, 5.8666673, 1, 36, 1.0077076, 16.46, 5.9, 1, 36, 0.85181904, 16.46, 6.0333333, 1, 36, 1.0077076, 16.46, 6.066667, 1, 36, 0.8492279, 16.46, 6.133333, 1, 36, 0.84157467, 16.46, 6.233333, 1, 36, 0.8492279, 16.46, 6.299999, 1, 36, 0.84157467, 16.46, 6.4, 1, 36, 0.89985657, 16.46, 6.566666, 1, 36, 0.89985657, 16.46, 6.6000004, 1, 36, 0.85181904, 16.46, 6.7333336, 1, 36, 1.0077076, 16.46, 6.7666664, 1, 36, 0.85181904, 16.46, 6.8999996, 1, 36, 1.0077076, 16.46, 6.9333334, 1, 36, 0.8492279, 16.46, 7.0333333, 1, 36, 0.85181904, 16.46, 7.0999994, 1, 36, 0.8492279, 16.46, 7.1666665, 1, 36, 1.0077076, 16.46, 7.3666663, 1, 36, 0.8492279, 16.46, 7.4333324, 1, 36, 0.84157467, 16.46, 7.633333, 1, 36, 0.85181904, 16.46, 7.6999993, 1, 36, 0.89985657, 16.46, 7.7666664, 1, 36, 1.0077076, 16.46, 7.8999996, 1, 36, 0.85181904, 16.46, 7.966666, 1, 36, 0.8492279, 16.46, 8.033333, 1, 36, 0.84157467, 16.46, 8.233333, 1, 36, 0.8492279, 16.46, 8.299999, 1, 36, 0.89985657, 16.46, 8.5, 1, 36, 0.85181904, 16.46, 8.633333, 1, 36, 1.0077076, 16.46, 8.833333, 1, 36, 0.85181904, 16.46, 8.966666, 1, 36, 1.0077076, 16.46, 9.166666, 1, 36, 0.8492279, 16.46, 9.233333, 1, 36, 0.84157467, 16.46, 9.499999, 1, 36, 0.89985657, 16.46, 9.833333, 1, 36, 1.0077076, 16.46, 10.033332, 1, 36, 0.8492279, 16.46, 10.4, 1, 36, 0.8657751, 16.46, 10.9, 1, 36, 0.87586594, 16.46, 11.566667, 1, 36, 0.87586594, 16.46, 13.433333, 1, 36, 0.87586594, 16.46, 15.4, 1, 36, 0.87586594, 16.46, 17.566668, 1, 36, 0.87816715, 16.46, 18.833334, 1, 36, 0.8729515, 16.46, 19.7, 1, 36, 0.87586594, 16.46, 20.141666, 1, 36, 1.0077076, 16.46, 20.341667, 1, 36, 0.8492279, 16.46, 20.408333, 1, 36, 0.84157467, 16.46, 20.666666, 1, 36, 0.85181904, 16.46, 20.675, 1, 36, 0.89985657, 16.46, 20.875, 1, 36, 0.85181904, 16.46, 21.008333, 1, 36, 1.0077076, 16.46, 21.033333, 1, 36, 1.0077076, 16.46, 21.208332, 1, 36, 0.8492279, 16.46, 21.233334, 1, 36, 0.8492279, 16.46, 21.3, 1, 36, 0.84157467, 16.46, 21.558332, 1, 36, 0.85181904, 16.46, 21.566666, 1, 36, 0.89985657, 16.46, 21.766666, 1, 36, 0.85181904, 16.46, 21.9, 1, 36, 1.0077076, 16.46, 21.933332, 1, 36, 1.0077076, 16.46, 22.099998, 1, 36, 0.8492279, 16.46, 22.133333, 1, 36, 0.8492279, 16.46, 22.199999, 1, 36, 0.84157467, 16.46, 22.458332, 1, 36, 0.85181904, 16.46, 22.466665, 1, 36, 0.89985657, 16.46, 22.666666, 1, 36, 0.85181904, 16.46, 22.8, 1, 36, 1.0077076, 16.46, 22.999998, 1, 36, 0.8492279, 16.46, 23.066668, 1, 36, 1.0077076, 16.46, 23.266668, 1, 36, 0.8492279, 16.46, 23.333334, 1, 36, 0.84157467, 16.46, 23.591667, 1, 36, 0.85181904, 16.46, 23.6, 1, 36, 0.89985657, 16.46, 23.800001, 1, 36, 0.85181904, 16.46, 23.933334, 1, 36, 1.0077076, 16.46, 24.133333, 1, 36, 0.8492279, 16.46, 24.166666, 1, 36, 1.0077076, 16.46, 24.366667, 1, 36, 0.8492279, 16.46, 24.433332, 1, 36, 0.84157467, 16.46, 24.691666, 1, 36, 0.85181904, 16.46, 24.699999, 1, 36, 0.89985657, 16.46, 24.9, 1, 36, 0.85181904, 16.46, 25.033333, 1, 36, 1.0077076, 16.46, 25.233334, 1, 36, 1.0077076, 16.46, 25.433334, 1, 36, 0.8492279, 16.46, 25.5, 1, 36, 0.84157467, 16.46, 25.758333, 1, 36, 0.85181904, 16.46, 25.766666, 1, 36, 0.89985657, 16.46, 25.966667, 1, 36, 0.85181904, 16.46, 26.1, 1, 36, 1.0077076, 16.46, 26.3, 1, 36, 0.8492279, 16.46, 26.633333, 1, 36, 1.0086813, 16.46, 27.1, 1, 36, 0.87690926, 16.46, 28.466667, 1, 36, 2.2276154, 16.46, 29.4, 1, 36, 0.8829746, 16.46)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("npc/nate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0.9, 1, 37.610752, 1.5112314, 15.957554, 1, 1, 37.243736, 0.8813534, 16.549286, 10.533334, 1, 37.243736, 0.8813534, 16.549286, 11.133333, 1, 37.437855, 0.8813534, 16.549286, 11.733334, 1, 36.979164, 0.8813534, 16.549286, 12.6, 1, 37.48091, 0.8813534, 16.549286, 13.1, 1, 36.995632, 0.8813534, 16.549286, 13.666667, 1, 37.674583, 0.8813534, 16.549286, 14.3, 1, 37.285183, 0.8813534, 16.549286, 14.933333, 1, 37.59431, 0.8813534, 16.549286, 15.8, 1, 37.19608, 0.8813534, 16.549286, 16.766666, 1, 37.881424, 1.4053555, 16.549286, 17.866667, 1, 37.34435, 1.9255733, 16.549286, 19.066668, 1, 36.577988, 1.194624, 16.549286, 20.066668, 1, 37.19252, 0.85819626, 16.549286)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jc8es"]
+_data = {
+&"RESET": SubResource("Animation_o5uye"),
+&"first scene": SubResource("Animation_e6d8c")
+}
+
 [node name="Main" type="Node3D" unique_id=2054266872]
 
 [node name="lighting" type="Node3D" parent="." unique_id=832965324]
@@ -143,9 +206,6 @@ size = Vector3(15.347649, 22.846436, 20.660637)
 shape = 0
 material = SubResource("FogMaterial_choun")
 
-[node name="player" parent="." unique_id=962974825 instance=ExtResource("1_o5uye")]
-transform = Transform3D(-0.06273585, 0, -0.4960486, 0, 0.5, 0, 0.4960486, 0, -0.06273585, 34.915394, 9.348809, -41.118374)
-
 [node name="Kitchen Boundary" parent="." unique_id=1499721593 instance=ExtResource("2_e6d8c")]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
 
@@ -199,15 +259,32 @@ mesh = SubResource("PlaneMesh_85g3d")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2044363779]
 stream = ExtResource("9_75aq2")
+volume_db = -10.343
+autoplay = true
+
+[node name="yodialogue" type="AudioStreamPlayer" parent="." unique_id=983714716]
+stream = ExtResource("9_e6d8c")
+volume_db = 24.0
 autoplay = true
 
 [node name="npc" type="Node3D" parent="." unique_id=804087361]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5117273, 7.7635317, -50.47866)
 
 [node name="orangina" type="MeshInstance3D" parent="npc" unique_id=499389000]
-transform = Transform3D(-2.9888787, 0, -0.25807723, 0, 3, 0, 0.25807723, 0, -2.9888787, 36.005188, 0.8313103, 16.305702)
+transform = Transform3D(-2.9888787, 0, -0.25807723, 0, 3, 0, 0.25807723, 0, -2.9888787, 35.427166, 0.8725147, 16.459915)
 mesh = SubResource("QuadMesh_1snb8")
 
 [node name="nate" type="MeshInstance3D" parent="npc" unique_id=1351818671]
-transform = Transform3D(-2.9888787, 0, -0.25807723, 0, 3, 0, 0.25807723, 0, -2.9888787, 37.097237, 0.8313103, 16.305702)
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 3, 37.881424, 1.4053555, 16.549286)
 mesh = SubResource("QuadMesh_vlhxo")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1515030863]
+transform = Transform3D(-0.9836847, 2.2351742e-08, -0.1799012, -0.042863637, 0.9712008, 0.23437491, 0.17472021, 0.23826224, -0.9553554, 31.216286, 9.323059, -36.333527)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D" unique_id=1547383426]
+transform = Transform3D(5.9997706, -0.014670581, -0.02640489, 0.05103731, 1.1580188, 3.302742, -0.008755431, -3.302842, 1.1580993, 0.0122795105, -0.45166492, 0.4213333)
+mesh = ExtResource("10_o5uye")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=190820682]
+libraries/ = SubResource("AnimationLibrary_jc8es")
+autoplay = &"first scene"

@@ -12,9 +12,9 @@ func _ready() -> void:
 	if not player.health_changed.is_connected(_on_player_health_changed):
 		player.health_changed.connect(_on_player_health_changed)
 	stamina_bar.min_value = 0
-	stamina_bar.max_value = player.dash_cooldown_ms
+	stamina_bar.max_value = player.dash_cooldown
 	
-	stamina_bar.value = player.dash_cooldown_ms 
+	stamina_bar.value = player.dash_cooldown 
 
 func _process(_delta: float) -> void:
 	update_stamina_bar()
@@ -28,4 +28,4 @@ func update_stamina_bar() -> void:
 	var elapsed_since_dash :int = now - player.last_dash_time
 
 	# empty right after dash, then fills back up until ready
-	stamina_bar.value = clamp(elapsed_since_dash, 0, player.dash_cooldown_ms)
+	stamina_bar.value = clamp(elapsed_since_dash, 0, player.dash_cooldown)

@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://d3jvmuql26r8s"]
 
 [ext_resource type="PackedScene" uid="uid://bu1hashg37cmp" path="res://scenes/player.tscn" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://cm1dbmf7nhqfd" path="res://scenes/enemy.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dqh2km438de3t" path="res://scenes/kitchen_boundary.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://ckcf1ks2a8na1" path="res://scenes/counter.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" path="res://scenes/oven.tscn" id="5_tbgi4"]
 [ext_resource type="ArrayMesh" uid="uid://dc22pll2tuxcj" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/kitchentable_B.obj" id="6_tipki"]
 [ext_resource type="ArrayMesh" uid="uid://bm1pug35t8uhl" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/pot_large.obj" id="7_85g3d"]
 [ext_resource type="ArrayMesh" uid="uid://b5w7al8vpcfny" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/SYONSCABINET.obj" id="8_choun"]
-[ext_resource type="PackedScene" uid="uid://c0hv0xklje1np" path="res://scenes/milk_enemy.tscn" id="9_85g3d"]
-[ext_resource type="PackedScene" uid="uid://blfcfbtsm8apo" path="res://scenes/can_enemy.tscn" id="10_choun"]
+[ext_resource type="Script" uid="uid://c0megmhgx6vey" path="res://scripts/can_spawn.gd" id="9_choun"]
+[ext_resource type="AudioStream" uid="uid://cenh67nkop0jb" path="res://assets/audio/goldensoundlabs-waltz-life-462704.mp3" id="11_ya4ey"]
+[ext_resource type="Script" uid="uid://34xamgd5fw6f" path="res://scripts/egg_spawn.gd" id="12_eb6dy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tipki"]
 sky_top_color = Color(0.22392395, 0.4674489, 0.67756546, 1)
@@ -63,6 +63,15 @@ vertices = PackedVector3Array(-63.5, 0.49998474, -47.5, -63.5, 0.49998474, 47.5,
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_85g3d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ya4ey"]
+size = Vector3(6.71521, 4.104248, 10.624512)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eb6dy"]
+size = Vector3(5.708252, 4.9776154, 5.7319336)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_trceg"]
+size = Vector3(12.97934, 9.255981, 12.280701)
 
 [node name="Main" type="Node3D" unique_id=2054266872]
 
@@ -171,20 +180,28 @@ navigation_mesh = SubResource("NavigationMesh_tipki")
 transform = Transform3D(64, 0, 0, 0, 1, 0, 0, 0, 48, 0, -1.5258789e-05, 0)
 mesh = SubResource("PlaneMesh_85g3d")
 
-[node name="enemy" parent="NavigationRegion3D" unique_id=1573033731 groups=["enemy"] instance=ExtResource("3_jyhfs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8471432, 7.8847523, -34.007614)
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=868767901]
+stream = ExtResource("11_ya4ey")
+volume_db = -23.451
+autoplay = true
 
-[node name="Enemy3" parent="NavigationRegion3D" unique_id=2097082458 groups=["enemy"] instance=ExtResource("3_jyhfs")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.1609497, 0.74679303, 3.2143207)
+[node name="CanSpawn" type="Area3D" parent="." unique_id=811253192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.935522, 2.4273624, 30.056473)
+script = ExtResource("9_choun")
 
-[node name="Enemy" parent="NavigationRegion3D" unique_id=143697681 groups=["enemy"] instance=ExtResource("3_jyhfs")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -9.724566, 1.3784072, -39.240265)
+[node name="trigger" type="CollisionShape3D" parent="CanSpawn" unique_id=1013393738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.834137, 13.543146, 4.825775)
+shape = SubResource("BoxShape3D_ya4ey")
 
-[node name="Enemy2" parent="NavigationRegion3D" unique_id=1630531314 groups=["enemy"] instance=ExtResource("3_jyhfs")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -17.14536, 1.3784053, -30.233776)
+[node name="Area3D" type="Area3D" parent="CanSpawn" unique_id=1836334410]
 
-[node name="MilkBody" parent="." unique_id=1657694849 instance=ExtResource("9_85g3d")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 23.597054, -0.7270045, 27.750242)
+[node name="spawn" type="CollisionShape3D" parent="CanSpawn/Area3D" unique_id=1766593046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.25312, 17.151402, 14.790604)
+shape = SubResource("BoxShape3D_eb6dy")
 
-[node name="CharacterBody3D" parent="." unique_id=606682438 instance=ExtResource("10_choun")]
-transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, 26.938852, 0.1546228, 28.514565)
+[node name="EggSpawn" type="Area3D" parent="." unique_id=261769891]
+script = ExtResource("12_eb6dy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EggSpawn" unique_id=1701808373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.935522, 2.4273624, 30.056473)
+shape = SubResource("BoxShape3D_trceg")

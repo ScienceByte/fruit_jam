@@ -8,8 +8,8 @@ extends CharacterBody3D
 
 var curr_speed: float = 8.0
 
-@export var walking_speed :float = 8.0
-const sprinting_speed = 15
+@export var walking_speed :float = 6.0
+const sprinting_speed = 10.2
 const jump_velocity = 8
 
 const mouse_sens = 0.2
@@ -254,3 +254,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		is_attacking = false
 		weapon_hitbox.monitoring = false
 		anim_player.play("WeaponIdle")
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	pass # Replace with function body.

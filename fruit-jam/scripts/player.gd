@@ -60,8 +60,6 @@ func _ready() -> void:
 	
 	if not weapon_hitbox.area_entered.is_connected(_on_weapon_hitbox_area_entered):
 		weapon_hitbox.area_entered.connect(_on_weapon_hitbox_area_entered)
-	if not weapon_hitbox.body_entered.is_connected(_on_weapon_hitbox_body_entered):
-		weapon_hitbox.body_entered.connect(_on_weapon_hitbox_body_entered)
 	health = max_health
 	health_changed.emit(health, max_health)
 
@@ -78,8 +76,6 @@ func _process(delta: float) -> void:
 func _on_weapon_hitbox_area_entered(area: Area3D) -> void:
 	_apply_weapon_damage(area)
 
-func _on_weapon_hitbox_body_entered(body: Node3D) -> void:
-	_apply_weapon_damage(body)
 
 
 func _apply_weapon_damage(hit_node: Node) -> void:

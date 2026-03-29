@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bm1pug35t8uhl" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/pot_large.obj" id="6_vlhxo"]
 [ext_resource type="ArrayMesh" uid="uid://b5w7al8vpcfny" path="res://assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/SYONSCABINET.obj" id="7_oo1ka"]
 [ext_resource type="Texture2D" uid="uid://oxxwfda0y63j" path="res://assets/orangina.png" id="8_3v48n"]
+[ext_resource type="AudioStream" uid="uid://d26g5e6a5k857" path="res://assets/audio/Happy Birthday Type Beat (Prod. Wxsterr) [TubeRipper.cc].mp3" id="9_75aq2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tipki"]
 sky_top_color = Color(0.22392395, 0.4674489, 0.67756546, 1)
@@ -190,3 +191,5 @@ transform = Transform3D(64, 0, 0, 0, 1, 0, 0, 0, 48, 0, -1.5258789e-05, 0)
 mesh = SubResource("PlaneMesh_85g3d")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2044363779]
+stream = ExtResource("9_75aq2")
+autoplay = true

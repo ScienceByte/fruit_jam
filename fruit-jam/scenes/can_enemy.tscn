@@ -29,7 +29,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1, 2.3666666),
 "transitions": PackedFloat32Array(3.999999, 0.17075506, 0.17075506),
 "update": 0,
-"values": [Vector3(-0.053, 0, 0), Vector3(-0.053, 0.051, 0), Vector3(-0.053, 0, 0)]
+"values": [Vector3(-0.186, 0, 0), Vector3(-0.186, 0.051, 0), Vector3(-0.186, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_0rld7"]
@@ -86,7 +86,7 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_u7xh8"]
 resource_name = "Rev"
 length = 0.5
-loop_mode = 2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -106,10 +106,10 @@ tracks/1/path = NodePath("../../..:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
+"times": PackedFloat32Array(0.033333335, 0.125, 0.25, 0.375, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.147, 0, 0), Vector3(0.147, -0.025407493, 0), Vector3(0.147, 0.02, 0), Vector3(0.147, -0.01, 0), Vector3(0.147, 0, 0)]
+"values": [Vector3(-0.186, 0, 0), Vector3(-0.186, -0.025, 0), Vector3(-0.186, 0.02, 0), Vector3(-0.186, -0.01, 0), Vector3(-0.186, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_fa4j2"]
@@ -137,7 +137,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.147, -0.019214638, 0), Vector3(0.147, -0.02, 0), Vector3(0.147, 0.01, 0), Vector3(0.147, -0.02, 0), Vector3(0.147, 0, 0)]
+"values": [Vector3(-0.186, -0.019, 0), Vector3(-0.186, -0.02, 0), Vector3(-0.186, 0.01, 0), Vector3(-0.186, -0.02, 0), Vector3(-0.186, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_hh0no"]
@@ -292,23 +292,26 @@ mesh = SubResource("ArrayMesh_hssep")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Pivot/can-open2" unique_id=1711980144]
 transform = Transform3D(0.3174896, 0, 0, 0, 0.30922338, 0, 0, 0, 1, 1.4901161e-08, 0.2052794, -0.1563707)
 sprite_frames = SubResource("SpriteFrames_sdcu5")
+autoplay = "default"
 frame_progress = 0.15601481
 
 [node name="Area3D" type="Area3D" parent="Pivot/can-open2" unique_id=521299153]
 collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/can-open2/Area3D" unique_id=291080070]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_gkjlt")
 
 [node name="Area3D2" type="Area3D" parent="Pivot/can-open2" unique_id=112536128]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/can-open2/Area3D2" unique_id=1448111975]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_gkjlt")
 
 [node name="StandingCollision" type="CollisionShape3D" parent="." unique_id=1568002235]
-transform = Transform3D(0.95, 0, 0, 0, 0.95, 0, 0, 0, 0.95, -0.2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32703033, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_hh0no")
 
 [node name="RollingCollision" type="CollisionShape3D" parent="." unique_id=299043396]
-transform = Transform3D(-4.152582e-08, 0.95, 0, -0.95, -4.152582e-08, 0, 0, 0, 0.95, -0.053, 0.14656232, 0)
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.186, 0.147, 0)
 shape = SubResource("ConvexPolygonShape3D_fa4j2")

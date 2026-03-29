@@ -47,6 +47,7 @@ signal health_changed(new_health: int, max_health: int)
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	weapon_hitbox.monitoring = false
+	weapon_hitbox.collision_mask = 3
 
 	if not anim_player.animation_finished.is_connected(_on_animation_player_animation_finished):
 		anim_player.animation_finished.connect(_on_animation_player_animation_finished)
@@ -56,6 +57,8 @@ func _ready() -> void:
 	
 	if not weapon_hitbox.area_entered.is_connected(_on_weapon_hitbox_area_entered):
 		weapon_hitbox.area_entered.connect(_on_weapon_hitbox_area_entered)
+	if not weapon_hitbox.body_entered.is_connected(_on_weapon_hitbox_body_entered):
+		weapon_hitbox.body_entered.connect(_on_weapon_hitbox_body_entered)
 	health = max_health
 	health_changed.emit(health, max_health)
 
@@ -70,20 +73,36 @@ func _process(delta: float) -> void:
 		anim_player.play("WeaponAttack")
 
 func _on_weapon_hitbox_area_entered(area: Area3D) -> void:
-	var target := area.get_parent()
+	_apply_weapon_damage(area)
 
+func _on_weapon_hitbox_body_entered(body: Node3D) -> void:
+	_apply_weapon_damage(body)
+
+
+func _apply_weapon_damage(hit_node: Node) -> void:
+	var target := _resolve_damage_target(hit_node)
 	if target == null:
 		return
 
 	if damaged_targets_this_swing.has(target):
 		return
 
-	print("Weapon hit: ", area.name, " parent: ", target.name)
+	print("Weapon hit: ", hit_node.name, " target: ", target.name)
 
-	if target.is_in_group("enemy"):
-		if target.has_method("take_damage"):
-			target.take_damage(weapon_damage)
-			damaged_targets_this_swing.append(target)
+	if target != self and not target.is_in_group("player") and target.has_method("take_damage"):
+		target.take_damage(weapon_damage)
+		damaged_targets_this_swing.append(target)
+
+
+func _resolve_damage_target(hit_node: Node) -> Node:
+	var current := hit_node
+
+	while current != null:
+		if current != self and current.has_method("take_damage"):
+			return current
+		current = current.get_parent()
+
+	return null
 
 
 func take_damage(amount: int) -> void:

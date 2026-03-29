@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c0hv0xklje1np"]
 
-[ext_resource type="ArrayMesh" uid="uid://63m3uc7tqqy0" path="res://assets/Food/Models/OBJ format/carton.obj" id="1_0p51g"]
 [ext_resource type="Script" uid="uid://grgnxjd0mcw4" path="res://scripts/milk_enemy.gd" id="1_6yip4"]
+[ext_resource type="ArrayMesh" uid="uid://nhsraqsdjxth" path="res://assets/Food/Models/OBJ format/carton.tres" id="3_jeoqb"]
 [ext_resource type="Texture2D" uid="uid://ceatn3fdc6rld" path="res://assets/ExpressionsAssetByVerzatileDevIndiv__g59.png" id="3_oqcls"]
 [ext_resource type="PackedScene" uid="uid://bfskt06uejdl1" path="res://scenes/warning_zone.tscn" id="4_jeoqb"]
 
@@ -27,7 +27,7 @@ shape = SubResource("ConvexPolygonShape3D_oqcls")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=733955765]
 transform = Transform3D(3.6, 0, 0, 0, 3.5994518, -0.06282866, 0, 0.06282866, 3.5994518, 0, 0.31347215, -0.010177493)
-mesh = ExtResource("1_0p51g")
+mesh = ExtResource("3_jeoqb")
 
 [node name="Decal" type="Decal" parent="MeshInstance3D" unique_id=808634712]
 transform = Transform3D(-4.3711392e-08, -1, 0, -2.6077032e-08, 1.831868e-15, -1.0000004, 1.0000004, -4.3711392e-08, -2.6077032e-08, 0.04426108, 0.27520317, 0.0033067656)

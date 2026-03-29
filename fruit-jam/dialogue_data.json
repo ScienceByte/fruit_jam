@@ -1,0 +1,48 @@
+{
+  "the_counter": [
+	{"speaker": "BB", "text": "Ben! Thank the peel you’re awake!"},
+	{"speaker": "Ben", "text": "BB, where is she? Her rind is on the floor."},
+	{"speaker": "BB", "text": "They’re locking down the Cabinet Borders. You need to run!"},
+	{"speaker": "Ben", "text": "I found a green shaving. Did the vegetables take her?"},
+	{"speaker": "BB", "text": "Don't ask questions you can't digest. Just move!", "action": "start_quest_find_gina"}
+  ],
+  "party_store": [
+	{"speaker": "Blerk", "text": "Whoa, peel back, man. You look bruised."},
+	{"speaker": "Ben", "text": "Blerk. Was Gina here?"},
+	{"speaker": "Blerk", "text": "Yeah, looking at streamers. Didn't buy anything."},
+	{"speaker": "Ben", "text": "Who was she with?"},
+	{"speaker": "Blerk", "text": "Left with some rough-looking greens. Real fibrous types."},
+	{"speaker": "Ben", "text": "Point me to the crisper. Now.", "action": "unlock_veggie_court"}
+  ],
+  "veggie_court_aggressive": [
+	{"speaker": "Ben", "text": "Where's my wife, Brockingi? I know your roots took her."},
+	{"speaker": "King Brockingi", "text": "You march into my dirt and accuse the crown?"},
+	{"speaker": "Ben", "text": "I found your shavings at the scene. Don't lie."},
+	{"speaker": "King Brockingi", "text": "Guards, toss this rot out. And ready the catapults.", "action": "trigger_war_ending"}
+  ],
+  "veggie_court_diplomatic": [
+	{"speaker": "Ben", "text": "Your Highness. I found this shaving where my wife vanished."},
+	{"speaker": "King Brockingi", "text": "Hmm. A rough cut. Sloppy edge work."},
+	{"speaker": "Ben", "text": "Do you recognize the slice?"},
+	{"speaker": "King Brockingi", "text": "That's Carl's handiwork. Check the plumbing, fruit.", "action": "unlock_plumber_carl"}
+  ],
+  "the_fridge": [
+	{"speaker": "Milk Carton", "text": "Expired... I'm finally expired..."},
+	{"speaker": "Ben", "text": "Talk, dairy. Where did she go?"},
+	{"speaker": "Milk Carton", "text": "The ice... she just wanted ice..."},
+	{"speaker": "Ben", "text": "Who took her?"},
+	{"speaker": "Milk Carton", "text": "Nobody. She walked right into the warzone."},
+	{"speaker": "Ben", "text": "The Canned Foods."},
+	{"speaker": "Milk Carton", "text": "The Cans and the Eggs. They're cracking shells in the Pantry.", "action": "unlock_pantry"}
+  ],
+  "pantry_tragic": [
+	{"speaker": "Gina", "text": "Ben! You made it! Get down, the Cans are-"},
+	{"speaker": "Ben", "text": "Drop the act, Gina. Darcey told me everything."},
+	{"speaker": "Gina", "text": "Darcey? Ben, what are you talking about? We need to hide!"},
+	{"speaker": "Ben", "text": "Is that what you told Carl? Before you wrote him that song?"},
+	{"speaker": "Gina", "text": "The song? Ben, I was trying to fix th-"},
+	{"speaker": "Ben", "text": "I read the lyrics! You left me for a root vegetable!"},
+	{"speaker": "Gina", "text": "Put the umbrella down, Ben. You're scaring me."},
+	{"speaker": "Ben", "text": "I'm not the one you should be scared of.", "action": "trigger_jail_ending"}
+  ]
+}

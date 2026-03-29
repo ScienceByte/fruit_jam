@@ -30,9 +30,10 @@ shadow_enabled = true
 environment = SubResource("Environment_jyhfs")
 
 [node name="player" parent="." unique_id=962974825 instance=ExtResource("1_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7248716, 3.8115406, -6.0810375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7248716, 5.717743, -6.0810375)
 
 [node name="Kitchen Boundary" parent="." unique_id=1499721593 instance=ExtResource("3_sugp2")]
+transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 0, 0)
 
 [node name="MilkBody" parent="." unique_id=1657694849 instance=ExtResource("4_jyhfs")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.47959733, 0.73933303, -10.006388)

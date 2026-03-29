@@ -10,6 +10,7 @@ enum State {
 
 @onready var player: Node3D = get_tree().get_first_node_in_group("player")
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var damaged: AudioStreamPlayer3D = $Damaged
 
 @onready var hitbox: Area3D = $"Pivot/MeshInstance3D/Area3D"
 @onready var attack_box: Area3D = $"Pivot/MeshInstance3D/Area3D2"
@@ -30,6 +31,10 @@ enum State {
 @export var player_launch_horizontal_speed: float = 28.0
 @export var player_launch_vertical_speed: float = 14.0
 @export var launch_away_from_roll_direction: bool = true
+@export var ledge_check_forward_distance: float = 0.9
+@export var ledge_check_down_distance: float = 2.5
+@export var ledge_check_up_offset: float = 0.5
+@export var lower_player_height_threshold: float = 0.7
 
 var health: int = 40
 var state: int = State.IDLE
@@ -188,12 +193,42 @@ func handle_rolling(delta: float) -> void:
 		rolling_started = true
 		anim_player.play("Rolling", animation_blend_time)
 
+	if should_avoid_ledge_drop() and not has_floor_ahead(roll_direction):
+		enter_getup()
+		return
+
 	velocity.x = roll_direction.x * roll_speed
 	velocity.z = roll_direction.z * roll_speed
 
 	var face_dir := Vector3(roll_direction.x, 0.0, roll_direction.z)
 	if face_dir.length_squared() > 0.0001:
 		look_at(global_position + face_dir, Vector3.UP)
+
+
+func should_avoid_ledge_drop() -> bool:
+	if player == null:
+		return true
+
+	# Allow dropping only when actively rolling toward a clearly lower player.
+	var player_is_lower := player.global_position.y < get_tracking_position().y - lower_player_height_threshold
+	return not player_is_lower
+
+
+func has_floor_ahead(direction: Vector3) -> bool:
+	var horizontal := Vector3(direction.x, 0.0, direction.z)
+	if horizontal.length_squared() <= 0.0001:
+		return true
+
+	horizontal = horizontal.normalized()
+	var ray_from := get_tracking_position() + horizontal * ledge_check_forward_distance + Vector3.UP * ledge_check_up_offset
+	var ray_to := ray_from + Vector3.DOWN * ledge_check_down_distance
+
+	var query := PhysicsRayQueryParameters3D.create(ray_from, ray_to)
+	query.exclude = [self]
+	query.collision_mask = collision_mask
+
+	var hit := get_world_3d().direct_space_state.intersect_ray(query)
+	return not hit.is_empty()
 
 
 func enter_getup() -> void:
@@ -265,7 +300,7 @@ func _apply_roll_damage(hit_node: Node) -> void:
 		if state == State.ROLLING and target.has_method("take_damage"):
 			print("Can enemy dealt ", damage_amount, " damage to ", target.name)
 			target.take_damage(damage_amount)
-
+			
 		_apply_launch_to_target(target)
 		damaged_bodies_this_roll.append(target)
 
@@ -357,3 +392,4 @@ func take_damage(damage_taken: int) -> void:
 	health -= damage_taken
 	if health <= 0:
 		queue_free()
+	damaged.play()

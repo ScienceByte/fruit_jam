@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://04o5swdrdchl" path="res://scripts/can_enemy.gd" id="1_hh0no"]
 [ext_resource type="Texture2D" uid="uid://b1yufexkf200" path="res://assets/Expression Asset by VerzatileDev/ExpressionsAssetByVerzatiledev2032.png" id="2_0rld7"]
 [ext_resource type="ArrayMesh" uid="uid://bry4n7i5bg03a" path="res://assets/can-open.tres" id="2_hh0no"]
+[ext_resource type="AudioStream" uid="uid://bqw8kdd04u2vv" path="res://assets/audio/freesound_community-hitting-metal-hit-14582.mp3" id="4_fa4j2"]
 
 [sub_resource type="Animation" id="Animation_gkjlt"]
 resource_name = "new_animation"
@@ -277,3 +278,9 @@ shape = SubResource("ConvexPolygonShape3D_hh0no")
 [node name="RollingCollision" type="CollisionShape3D" parent="." unique_id=299043396]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.186, 0.147, 0)
 shape = SubResource("ConvexPolygonShape3D_fa4j2")
+
+[node name="Damaged" type="AudioStreamPlayer3D" parent="." unique_id=111086715]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.019679356, 0.12891074, 0)
+stream = ExtResource("4_fa4j2")
+
+[node name="death" type="AudioStreamPlayer3D" parent="." unique_id=1499451739]

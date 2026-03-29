@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dblen0fops1qg" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="ArrayMesh" uid="uid://dpyialwsdahdw" path="res://assets/utensil-spoon.tres" id="2_qhqgy"]
 [ext_resource type="Script" uid="uid://dmq57l8cmoivg" path="res://scripts/canvas_layer.gd" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://b1lk5vcu1k0cu" path="res://assets/audio/666herohero-slash-21834.mp3" id="4_dqkch"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
 radius = 0.5839844
@@ -257,3 +258,6 @@ vertical_alignment = 1
 [node name="CollsionBox" type="CollisionShape3D" parent="." unique_id=814027905]
 transform = Transform3D(0.95, 0, 0, 0, 0.95, 0, 0, 0, 0.95, 0, -0.18334961, 0)
 shape = SubResource("CapsuleShape3D_3vyb7")
+
+[node name="swing" type="AudioStreamPlayer3D" parent="." unique_id=938465118]
+stream = ExtResource("4_dqkch")

@@ -4,13 +4,13 @@ extends CharacterBody3D
 @onready var head: Node3D = $head
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var weapon_hitbox: Area3D = $head/WeaponPivot/MeshInstance3D/Area3D
+@onready var swing: AudioStreamPlayer3D = $swing
 
-var curr_speed: float = 5.0
+var curr_speed: float = 8.0
 
-@export var walking_speed :float = 5.0
-const sprinting_speed = 25.0
-const crouch_speed = 3.0
-const jump_velocity = 10	
+@export var walking_speed :float = 8.0
+const sprinting_speed = 15
+const jump_velocity = 8
 
 const mouse_sens = 0.2
 
@@ -19,9 +19,9 @@ var lerp_speed = 15.0
 var direction = Vector3.ZERO
 
 # dash settings
-@export var dash_speed = 24
+@export var dash_speed = 34
 @export var dash_cooldown = 3000
-@export var dash_duration = 0.099
+@export var dash_duration = 0.25
 
 var is_dashing = false
 var dash_timer : float = 0
@@ -180,7 +180,7 @@ func start_attack(now: int) -> void:
 	is_attacking = true
 	weapon_hitbox.monitoring = true
 	anim_player.play("WeaponAttack")
-
+	swing.play()
 
 func _physics_process(delta) -> void:
 	var now: int = Time.get_ticks_msec()
@@ -190,9 +190,7 @@ func _physics_process(delta) -> void:
 		start_attack(now)
 
 	# movement speed
-	if Input.is_action_pressed("crouch"):
-		curr_speed = crouch_speed
-	elif Input.is_action_pressed("sprint"):
+	if Input.is_action_pressed("sprint"):
 		curr_speed = sprinting_speed
 	else:
 		curr_speed = walking_speed

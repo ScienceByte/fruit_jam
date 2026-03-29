@@ -11,17 +11,18 @@ enum State {
 
 @onready var player: Node3D = get_tree().get_first_node_in_group("player")
 @onready var attack_area: Area3D = $MeshInstance3D/AttackArea
+@onready var damaged: AudioStreamPlayer3D = $damaged
 
 @onready var warning_zone_root: Node3D = $MeshInstance3D2
 @onready var warning_area: Area3D = $MeshInstance3D2/WarningArea
 
 @export var stomp_trigger_range = 16.0
 @export var hover_height = 10.0
-@export var ascend_speed = 9.0
-@export var hover_move_speed = 7.0
-@export var stomp_fall_speed = 24.0
-@export var hover_time = 4.0
-@export var recovery_time = 1.0
+@export var ascend_speed = 18.0
+@export var hover_move_speed = 12.0
+@export var stomp_fall_speed = 30.0
+@export var hover_time = 2.2
+@export var recovery_time = 1.7
 @export var damage_amount = 20
 @export var landing_snap_distance: float = 0.35
 
@@ -184,6 +185,7 @@ func take_damage(damage_taken: int) -> void:
 	health -= damage_taken
 	if health <= 0:
 		queue_free()
+	damaged.play()
 
 
 func _on_attack_area_area_entered(area: Area3D) -> void:

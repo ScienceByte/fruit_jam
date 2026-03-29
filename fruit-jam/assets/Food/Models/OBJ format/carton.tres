@@ -1,6 +1,6 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://nhsraqsdjxth"]
 
-[ext_resource type="Texture2D" path="res://assets/Food/Models/OBJ format/Textures/colormap.png" id="1_cnusv"]
+[ext_resource type="Texture2D" uid="uid://cokynenmh8y48" path="res://assets/Food/Models/OBJ format/Textures/colormap.png" id="1_cnusv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lypff"]
 resource_name = "colormap"
